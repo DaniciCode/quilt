@@ -10,10 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_30_160732) do
+ActiveRecord::Schema.define(version: 2022_05_30_164442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "families", force: :cascade do |t|
+    t.string "family_name"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_families_on_user_id"
+  end
+
+  create_table "memories", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "date"
+    t.string "location"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "scrapbook_memories", force: :cascade do |t|
+    t.bigint "memory_id", null: false
+    t.bigint "scrapbook_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["memory_id"], name: "index_scrapbook_memories_on_memory_id"
+    t.index ["scrapbook_id"], name: "index_scrapbook_memories_on_scrapbook_id"
+  end
+
+  create_table "scrapbooks", force: :cascade do |t|
+    t.string "location"
+    t.bigint "user_id", null: false
+    t.bigint "family_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["family_id"], name: "index_scrapbooks_on_family_id"
+    t.index ["user_id"], name: "index_scrapbooks_on_user_id"
+  end
+
+  create_table "user_families", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "family_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["family_id"], name: "index_user_families_on_family_id"
+    t.index ["user_id"], name: "index_user_families_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +75,12 @@ ActiveRecord::Schema.define(version: 2022_05_30_160732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "families", "users"
+  add_foreign_key "memories", "users"
+  add_foreign_key "scrapbook_memories", "memories"
+  add_foreign_key "scrapbook_memories", "scrapbooks"
+  add_foreign_key "scrapbooks", "families"
+  add_foreign_key "scrapbooks", "users"
+  add_foreign_key "user_families", "families"
+  add_foreign_key "user_families", "users"
 end

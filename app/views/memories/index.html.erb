@@ -4,8 +4,16 @@
       <p><%=memory.title%></p>
       <p><%=memory.date%></p>
       <p><%=memory.location%></p>
+      <% if memory.photo.attached? %>
+        <%=cl_image_tag memory.photo.key, width: 300   %>
+        <% end %>
     <%end%>
   <%end %>
+
+</div>
+
+<div>
+<%= link_to "Create new memory", new_memory_path %>
 </div>
 
 <%# if  memory belongs? to scrapbook do not appear in user memories%>

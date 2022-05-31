@@ -1,5 +1,11 @@
 <div>
-
-
+<%= simple_form_for [@memory],url:memories_path do |f| %>
+      <%= f.input :title %>
+      <%= f.input :date %>
+      <%= f.input :location %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.submit %>
+      <% end %>
 
 </div>

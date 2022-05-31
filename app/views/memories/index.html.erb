@@ -1,8 +1,9 @@
 <div>
   <%@memories.each do |memory| %>
-    <p><%=memory.title%></p>
-    <p><%=memory.date%></p>
-    <p><%=memory.location%></p>
+    <%= link_to memory_path(memory) do %>
+      <p><%=memory.title%></p>
+      <p><%=memory.date%></p>
+      <p><%=memory.location%></p>
+    <%end%>
   <%end %>
-
 </div>

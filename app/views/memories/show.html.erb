@@ -1,3 +1,13 @@
 <div>
 
+      <p><%=@memory.title%></p>
+      <p><%=@memory.description%></p>
+      <p><%=@memory.date%></p>
+      <p><%=@memory.location%></p>
+      <% @memory.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, width: 300 %>
+      <%end%>
+
+      <%= link_to "Back", memories_path %>
+
 </div>

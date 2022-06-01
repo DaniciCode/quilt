@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  border-bottom: 2px solid red !important;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,3 +12,7 @@
   width: 80px;
   margin-left: 25px;
 }
+
+// .line-nav {
+//   border-bottom: 2px solid red;
+// }

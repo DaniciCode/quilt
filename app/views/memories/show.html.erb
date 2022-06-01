@@ -1,13 +1,31 @@
-<div>
+<div class="container-show-memory">
+   <div class="modal-header">
 
-      <p><%=@memory.title%></p>
+    <%= link_to @memory do %>
+          <i class="fas fa-times close-icon"></i>
+          <% end %>
+   </div>
+
+ <div class="modal-body">
+      <h4><%=@memory.title%></h4>
       <p><%=@memory.description%></p>
       <p><%=@memory.date%></p>
       <p><%=@memory.location%></p>
       <% if @memory.photo.attached? %>
         <%=cl_image_tag @memory.photo.key, width: 300  %>
       <% end %>
-      <%= link_to "Back", memories_path %>
-      <%= link_to 'Delete Memory', @memory, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <div class="btn-memory">
 
+         <%= link_to "Back", memories_path, class: "btn" %>
+
+        <div >
+           <%= link_to @memory, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash icon-memory"></i>
+          <% end %>
+         </div>
+
+      </div>
+
+ </div>
 </div>
+<%#= link_to 'Delete', @memory, method: :delete, data: { confirm: 'Are you sure?' },class: "btn" %>

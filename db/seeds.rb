@@ -18,11 +18,10 @@ users_now = [user1, user2, user3, user4, user5, user6]
 puts "Created #{users_now.count} new users"
 
 #Families Seeds
-family1 = Family.create(family_name:"Smiths" , description:"family1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.", user: user1)
-family2 = Family.create(family_name:"Jones" , description:"family2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.", user: user2)
-family3 = Family.create(family_name:"Williams" , description:"family3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.", user: user3)
-user1_family1 = UserFamily.create(user: user1, family: family1)
-user2_family1 = UserFamily.create(user: user2, family: family1)
+family1 = Family.create(family_name:"Smiths" , description:"family1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.")
+family2 = Family.create(family_name:"Jones" , description:"family2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.")
+family3 = Family.create(family_name:"Williams" , description:"family3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.")
+
 
 
 #Memories Seeds

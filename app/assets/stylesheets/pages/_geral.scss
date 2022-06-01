@@ -1,24 +1,30 @@
+body{
+  background-color: white;
+}
 h1{
-  font-family: 'Libre Franklin';
+  font-family: 'Libre Franklin', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
   line-height: 58px;
   color: #461C7A;
+  margin-bottom: 30px;
 }
 
 h2{
-  font-family: 'Libre Franklin';
+  font-family: 'Libre Franklin', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
   line-height: 58px;
   text-align: center;
   color: #8D4C88;
+  margin-bottom: 80px;
+  margin-top: 60px;
 }
 
 p{
-  font-family: 'Libre Franklin';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -39,12 +45,12 @@ a{
 
 .btngeral{
   color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
   background-color: #461C7A;
   padding: 12px 40px;
   border-radius: 50px;
   font-weight: lighter;
   font-size: 16px;
   text-decoration: none;
+
 }
-
-

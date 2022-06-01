@@ -2,23 +2,9 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  background-color: #F7F6FC;
 }
 
-.banner h1 {
-  margin: 0;
-  font-family: Libre Franklin;
-  color: #461C7A;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 48px;
-  font-weight: bold;
-}
-
-.banner p {
-  font-size: 16px;
-  color: #292546;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
 .container {
   display: flex;
 }

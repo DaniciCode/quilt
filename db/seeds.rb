@@ -34,6 +34,8 @@ user2_family1 = UserFamily.create(user:user4, family:family2)
 user1_family1 = UserFamily.create(user:user5, family:family3)
 user2_family1 = UserFamily.create(user:user6, family:family3)
 
+
+
 #Memories Seeds
 memory1 = Memory.create!(title:"Promotion Department", description:"memory -1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,3,22), location:"Madrid",user:user1)
 memory2 = Memory.create(title:"Birthday", description:"memory -2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,5,15), location:"Madrid", user:user2)

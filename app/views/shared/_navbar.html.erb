@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon border-bottom">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-border">
   <div class="container-fluid">
-    <%= link_to memories_path, class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/monstergrannies/image/upload/v1654004638/Quilt/logo_rlzavi.png" %>
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag("logo.png") %>
     <% end %>
 
     <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link btngeral" %>
+            <%= link_to "Login", new_user_session_path, class: "btngeral" %>
           </li>
         <% end %>
       </ul>

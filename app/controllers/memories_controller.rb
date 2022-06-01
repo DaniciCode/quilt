@@ -28,6 +28,7 @@ class MemoriesController < ApplicationController
     redirect_to memories_path
   end
 
+
   private
 
   def memory_params

@@ -4,8 +4,9 @@
       <p><%=@memory.description%></p>
       <p><%=@memory.date%></p>
       <p><%=@memory.location%></p>
-      <%=cl_image_tag @memory.photo.key, width: 300   %>
-
+      <% if @memory.photo.attached? %>
+        <%=cl_image_tag @memory.photo.key, width: 300  %>
+      <% end %>
       <%= link_to "Back", memories_path %>
       <%= link_to 'Delete Memory', @memory, method: :delete, data: { confirm: 'Are you sure?' } %>
 

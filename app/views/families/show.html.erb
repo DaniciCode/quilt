@@ -1,0 +1,16 @@
+<div>
+      <p><%=@family.family_name%></p>
+      <p><%=@family.description%></p>
+      <p>Family created by: <%=@family.user.name %>
+      <p>Family members:</p>
+
+      <ul>
+        <% @family_members.each do |member| %>
+          <li><%= member.name %></li>
+        <% end %>
+      </ul>
+
+
+      <%= link_to "Back", families_path %>
+
+</div>

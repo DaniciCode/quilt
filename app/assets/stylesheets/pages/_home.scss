@@ -1,19 +1,16 @@
-// Specific CSS for your home-page
+.container-home{
+width: 70vw;
+margin:0 auto;
+}
+
 .card-home{
   background-color: #F7F6FC;
+  border: 2px solid #8D4C88;
 }
 
-.parahome{
-  padding-top: 10%;
-}
-
-.img-home{
-  padding-top: 10%;
-  width: 76px;
-  height: 90px;
-}
-
-#pa-home{
-  padding-left: 15%;
-  margin-bottom: 30%;
-}
+.container-about{
+  width: 100vw;
+  margin:0 auto;
+  background-color: #F7F6FC ;
+  margin-top: 5%;
+  }

@@ -1,13 +1,14 @@
 body{
   background-color: white;
 }
+
 h1{
   font-family: 'Libre Franklin', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
   line-height: 58px;
-  color: #461C7A;
+  color: #5c348e;
   margin-bottom: 30px;
 }
 
@@ -46,11 +47,24 @@ a{
 .btngeral{
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
-  background-color: #461C7A;
+  background-color: #7353B7;
   padding: 12px 40px;
   border-radius: 50px;
   font-weight: lighter;
   font-size: 16px;
   text-decoration: none;
+
+}
+
+.btngeral:hover{
+  color: #7353B7;
+  font-family: 'Roboto', sans-serif;
+  background-color: #FFFFFF;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: lighter;
+  font-size: 16px;
+  text-decoration: none;
+  border: 2px solid #7353B7;
 
 }

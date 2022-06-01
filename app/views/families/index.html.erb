@@ -1,0 +1,8 @@
+<div>
+  <%@families.each do |family| %>
+    <%= link_to family_path(family) do %>
+      <p><%=family.family_name%></p>
+      <p><%=family.description%></p>
+    <%end%>
+  <%end%>
+</div>

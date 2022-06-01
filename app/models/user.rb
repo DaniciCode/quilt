@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :first_name, :last_name, :age, presence: true
+  belongs_to :families
   has_many :user_memories, :class_name => 'Memory', :foreign_key => 'user_id', dependent: :destroy
   has_one_attached :photo
 

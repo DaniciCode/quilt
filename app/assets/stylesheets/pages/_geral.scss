@@ -27,6 +27,22 @@ p{
 }
 
 a{
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #292546;
+}
+
+
+.btngeral{
+  color: #FFFFFF;
+  background-color: #461C7A;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: lighter;
  font-family: 'Libre Franklin';
  font-style: normal;
  font-weight: 700;
@@ -34,13 +50,4 @@ a{
  line-height: 19px;
  text-transform: uppercase;
  color: #292546;
-}
-
-.btngeral{
-  color: #FFFFFF;
-  background-color: #292546;
-  padding: 12px 40px;
-  border-radius: 50px;
-  font-size: 16px;
-  text-decoration: none;
 }

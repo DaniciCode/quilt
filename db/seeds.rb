@@ -2,7 +2,11 @@ require "open-uri"
 
 puts 'Destroy db of quiltmemory...'
 
+Memory.destroy_all
+UserFamily.destroy_all
+Family.destroy_all
 User.destroy_all
+
 
 #User Seeds
 
@@ -18,13 +22,22 @@ users_now = [user1, user2, user3, user4, user5, user6]
 puts "Created #{users_now.count} new users"
 
 #Families Seeds
-family1 = Family.create(family_name:"Smiths" , description:"family1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.")
-family2 = Family.create(family_name:"Jones" , description:"family2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.")
-family3 = Family.create(family_name:"Williams" , description:"family3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.")
+family1 = Family.create(family_name:"Smiths" , description:"family1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.", user:user1)
+family2 = Family.create(family_name:"Jones" , description:"family2 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.", user:user2)
+family3 = Family.create(family_name:"Williams" , description:"family3 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.", user:user3)
+
+#User Families
+user1_family1 = UserFamily.create(user:user1, family:family1)
+user2_family1 = UserFamily.create(user:user2, family:family1)
+user1_family1 = UserFamily.create(user:user3, family:family2)
+user2_family1 = UserFamily.create(user:user4, family:family2)
+user1_family1 = UserFamily.create(user:user5, family:family3)
+user2_family1 = UserFamily.create(user:user6, family:family3)
+
+
 
 #Memories Seeds
 memory1 = Memory.create!(title:"Promotion Department", description:"memory -1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,3,22), location:"Madrid",user:user1)
-
 memory2 = Memory.create(title:"Birthday", description:"memory -2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,5,15), location:"Madrid", user:user2)
 memory3 = Memory.create(title:"Graduation", description:"memory -3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,7,22), location:"Paris", user:user3)
 memory4 = Memory.create(title:"First Tree", description:"memory -4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,6,16), location:"Berlim", user:user4)

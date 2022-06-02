@@ -1,4 +1,5 @@
 require 'open-uri'
+require "byebug"
 
 puts 'Destroy db of quiltmemory...'
 
@@ -59,11 +60,8 @@ memory1.photo.attach(
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
   content_type: 'image/jpg' # use the mime type of the attached file here
   )
-  memory1.save!
 
-photo2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/2_kkbmte.jpg')
-memory2.photo.attach(io: photo2, filename: 'photo2.jpg', content_type: 'image/jpg')
-memory2.save!
+
 photo3 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/3_mlg6fg.jpg')
 memory3.photo.attach(io: photo3, filename: 'photo3.jpg', content_type: 'image/jpg')
 photo4 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/4_vd1gn1.jpg')

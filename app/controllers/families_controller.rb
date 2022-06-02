@@ -24,8 +24,10 @@ class FamiliesController < ApplicationController
 
   def create
     @family = Family.new(family_params)
+    @family.user = current_user
     if @family.save
-      redirect_to families_path
+      UserFamily.create(user: current_user, family: @family)
+      redirect_to my_families_path
     else
       render :new
     end
@@ -41,7 +43,7 @@ class FamiliesController < ApplicationController
   private
 
   def family_params
-    params.require(:family).permit(:family_name, :description)
+    params.require(:family).permit(:family_name, :description, :photo)
   end
 
   def set_family

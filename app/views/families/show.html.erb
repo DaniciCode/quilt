@@ -3,6 +3,9 @@
     <h3 class="text-center">Fmily details </h3>
       <p><%=@family.family_name%></p>
       <p><%=@family.description%></p>
+      <% if @family.photo.attached? %>
+        <%=cl_image_tag @family.photo.key, width: 300  %>
+      <% end %>
       <p>Family created by: <%=@family.user.name %>
       <p>Family members:</p>
 <div>

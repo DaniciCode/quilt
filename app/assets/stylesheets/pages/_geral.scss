@@ -27,8 +27,8 @@ h2{
 h3{
   font-family: 'Libre Franklin', sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
+  font-weight: 400;
+  font-size: 25px;
   line-height: 58px;
   text-align: center;
   color: #5c348e;
@@ -40,6 +40,12 @@ h4{
   font-family: 'Libre Franklin', sans-serif;
   color: #292546;
   font-size: 18px;
+}
+
+h5{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color:#3c3478;
 }
 
 p{
@@ -65,7 +71,7 @@ a{
 a:hover{
   text-decoration: none;
   color: #292546;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .btngeral{

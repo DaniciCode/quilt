@@ -19,9 +19,12 @@
                 required: true,
 
                 input_html: { autocomplete: "Surname" }%>
-  <%= f.input :age,
+    <%= f.input :age,
                 required: true,
                 input_html: { autocomplete: "Birthdate" }%>
+    <%= f.input :photo, as: :file
+                required: false,
+                input_html: { autocomplete: "photo" }%>
     <%= f.input :email,
                 required: true,
                 input_html: { autocomplete: "email" }%>

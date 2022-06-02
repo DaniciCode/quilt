@@ -7,19 +7,14 @@
     <div class="content">
       <a href="#" data-bs-toggle="modal" data-bs-target="#memory-<%= memory.id %>">
         <div class="d-flex justify-content">
-          <div>
+          <div class="image-card">
             <% if memory.photo.attached? %>
-            <%=cl_image_tag memory.photo.key, width: 300   %>
             <% end %>
           </div>
           <div>
             <p><%=memory.date%></p>
             <h4><strong><%=memory.title%></strong></h4>
             <p><%=memory.description.first(99)%>...</p>
-              <div class="d-flex justify-content-between">
-                <p><strong>by:</strong><%=memory.user.name%></p>
-                <p><%=memory.location%></p>
-              </div>
           </div>
         </div>
       </a>
@@ -29,6 +24,6 @@
 <div>
 
 <%= link_to "Create new memory", new_memory_path %>
-<%= link_to "Create new memory", families_path %>
+<%= link_to "Families alldb", families_path %>
 <%#= link_to "Create new family",  %>
 </div>

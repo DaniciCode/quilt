@@ -92,6 +92,15 @@
   border-radius: 6px;
   background:#f7f6fc;
   margin-top: 5%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.image-card img {
+height: 100%;
+width: 120px;
+object-fit: cover;
+margin-right: 20px;
+border-radius: 6px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */

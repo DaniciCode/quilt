@@ -62,8 +62,6 @@ memory1.photo.attach(
   )
 
 
-photo2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/2_kkbmte.jpg')
-memory2.photo.attach(io: photo2, filename: 'photo2.jpg', content_type: 'image/jpg')
 photo3 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/3_mlg6fg.jpg')
 memory3.photo.attach(io: photo3, filename: 'photo3.jpg', content_type: 'image/jpg')
 photo4 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/4_vd1gn1.jpg')

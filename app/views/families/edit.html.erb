@@ -1,11 +1,12 @@
+
 <div class="d-flex justify-content-center">
   <div class="container-new">
     <h3 class="text-center">Edit your family</h3>
-
     <div class="form-inputs">
       <%= simple_form_for(@family) do |f| %>
       <%= f.input :family_name %>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file  %>
     </div>
      <div class="form-actions">
       <%= f.submit %>

@@ -10,7 +10,7 @@
         <p><%=@memory.description%></p>
         <p><%=@memory.date%></p>
         <p><%=@memory.location%></p>
-        <% if @memory.photo.attached? %>
+        <% if @memory.photo.attached? %>git c
           <%=cl_image_tag @memory.photo.key, width: 300  %>
         <% end %>
 

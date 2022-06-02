@@ -3,6 +3,7 @@
 <%= simple_form_for(@family) do |f| %>
   <%= f.input :family_name %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file  %>
   <%= f.submit %>
 <% end %>
 

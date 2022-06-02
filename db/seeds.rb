@@ -51,8 +51,13 @@ photo1 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653
 
 memory1.photo.attach(io: photo1, filename: 'photo1.jpg', content_type: 'image/jpg')
 
-photo2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/2_kkbmte.jpg')
-memory2.photo.attach(io: photo2, filename: 'photo2.jpg', content_type: 'image/jpg')
+#photo2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/2_kkbmte.jpg')
+#memory2.photo.attach(io: photo2, filename: 'photo2.jpg', content_type: 'image/jpg')
+
+file2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1653488319/grannie%20seeds/funny-portraits-with-old-grandmother-2022-02-03-11-46-06-utc_ydbab2.jpg')
+memory2.photo.attach(io: file2, filename: 'file2.jpg', content_type: 'image/jpg')
+
+
 photo3 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/3_mlg6fg.jpg')
 memory3.photo.attach(io: photo3, filename: 'photo3.jpg', content_type: 'image/jpg')
 photo4 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/4_vd1gn1.jpg')

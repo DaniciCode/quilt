@@ -9,7 +9,7 @@
         <div class="d-flex justify-content">
           <div>
             <% if memory.photo.attached? %>
-            <%=cl_image_tag memory.photo.key, width: 300   %>
+              <%= image_tag cl_image_path memory.photo.key   %>
             <% end %>
           </div>
           <div>

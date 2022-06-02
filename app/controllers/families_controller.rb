@@ -1,14 +1,21 @@
 class FamiliesController < ApplicationController
+  before_action :set_family, only: [ :show, :edit, :update ]
+
   def index
+    @families = Family.all
+  end
+
+  def my_families
     @families = UserFamily.where(user: current_user).map do |user_family|
       user_family.family
     end
   end
 
-  def show
-    @family = Family.find(params[:id])
 
+  def show
     @family_members = @family.users
+    #@user_family = UserFamily.new
+    @user_family = UserFamily.find_by(family: @family, user: current_user)
   end
 
   def new
@@ -24,13 +31,21 @@ class FamiliesController < ApplicationController
     end
   end
 
-  def edit
+  def edit; end
+
+  def update
+    @family.update(family_params)
+    redirect_to family_path(@family)
   end
 
   private
 
   def family_params
     params.require(:family).permit(:family_name, :description)
+  end
+
+  def set_family
+    @family = Family.find(params[:id])
   end
 
 end

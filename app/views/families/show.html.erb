@@ -12,5 +12,17 @@
 
 
       <%= link_to "Back", families_path %>
+      <% if @family.user == current_user %>
+        <%= link_to "Update family details", edit_family_path %>
+      <%end  %>
+      <%# <% unless @family.users.find(current_user.id) %>
+        <%# <%= simple_form_for [@family, @user_family ] do |f| %>
+        <%# <%= f.submit "Add a new member" %>
+        <%# <% end %>
+      <% unless @family.user == current_user || @family.users.include?(current_user) %>
+        <%= link_to "Join this family", user_families_path(family_id: @family.id), method: :post %>
+      <% else %>
+        <%= link_to "Leave this family", user_family_path(@user_family), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
 
 </div>

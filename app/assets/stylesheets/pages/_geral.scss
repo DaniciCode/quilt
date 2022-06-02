@@ -34,7 +34,12 @@ h3{
   color: #5c348e;
   margin-bottom: 10px;
   margin-top: 5%;
+}
 
+h4{
+  font-family: 'Libre Franklin', sans-serif;
+  color: #292546;
+  font-size: 18px;
 }
 
 p{
@@ -91,4 +96,13 @@ a:hover{
   letter-spacing: 3px;
   margin-right: 25px;
   border: 2px solid #7353B7;
+}
+
+.close-icon{
+  color: #7353B7;
+}
+
+
+.btn-memory{
+  display: inline-block;
 }

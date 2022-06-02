@@ -13,7 +13,7 @@
         <% if @memory.photo.attached? %>
           <%=cl_image_tag @memory.photo.key, width: 300  %>
         <% end %>
-      <div class="sm-sl modal-footer">
+
         <div class="btn-memory">
            <%= link_to "Back", memories_path, class: "btn" %>
 
@@ -23,7 +23,7 @@
              <% end %>
           </div>
       </div>
-    </div>
+
   </div>
 </div>
 <%#= link_to 'Delete', @memory, method: :delete, data: { confirm: 'Are you sure?' },class: "btn" %>

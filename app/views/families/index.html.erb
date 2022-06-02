@@ -5,6 +5,9 @@
     <%= link_to family_path(family) do %>
       <p><%=family.family_name%></p>
       <p><%=family.description%></p>
+      <% if family.photo.attached? %>
+        <%=cl_image_tag family.photo.key, width: 300   %>
+      <% end %>
     <%end%>
   <%end%>
 </div>

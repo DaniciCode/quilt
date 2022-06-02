@@ -1,4 +1,4 @@
-.modal-body{
+.container-show-memory{
   background-color: #F7F6FC;
   opacity: 0.9;
   width: 40%;
@@ -10,8 +10,22 @@
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1)
 }
 
-.icon-memory{
+.close-icon{
+  font-size: 24px;
+  margin-left: 5%;
+}
+
+.icon-trash{
   color: #7353B7;
-  width: 20%;
+  font-size: 30px;
+}
+
+.icon-trash:hover{
+  color: #7353B7;
+  font-size: 30px;
+}
+
+.modal-footer{
+  max-width: 40%;
   height: 20%;
 }

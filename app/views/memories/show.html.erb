@@ -1,31 +1,29 @@
 <div class="container-show-memory">
-   <div class="modal-header">
-
-    <%= link_to @memory do %>
-          <i class="fas fa-times close-icon"></i>
-          <% end %>
-   </div>
-
- <div class="modal-body">
-      <h4><%=@memory.title%></h4>
-      <p><%=@memory.description%></p>
-      <p><%=@memory.date%></p>
-      <p><%=@memory.location%></p>
-      <% if @memory.photo.attached? %>
-        <%=cl_image_tag @memory.photo.key, width: 300  %>
+ <div class="modal-header">
+      <%= link_to @memory do %>
+      <i class="fas fa-times close-icon"></i>
       <% end %>
-      <div class="btn-memory">
-
-         <%= link_to "Back", memories_path, class: "btn" %>
-
-        <div >
-           <%= link_to @memory, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fas fa-trash icon-memory"></i>
-          <% end %>
-         </div>
-
-      </div>
-
  </div>
+
+   <div class="modal-body">
+        <h4><%=@memory.title%></h4>
+        <p><%=@memory.description%></p>
+        <p><%=@memory.date%></p>
+        <p><%=@memory.location%></p>
+        <% if @memory.photo.attached? %>
+          <%=cl_image_tag @memory.photo.key, width: 300  %>
+        <% end %>
+      <div class="sm-sl modal-footer">
+        <div class="btn-memory">
+           <%= link_to "Back", memories_path, class: "btn" %>
+
+          <div class="sm-sl trash">
+             <%= link_to @memory, method: :delete, data: { confirm: 'Are you sure?' } do %>
+             <i class="fas fa-trash icon-trash"></i>
+             <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>
 <%#= link_to 'Delete', @memory, method: :delete, data: { confirm: 'Are you sure?' },class: "btn" %>

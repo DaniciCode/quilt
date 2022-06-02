@@ -1,4 +1,6 @@
 <div>
+<h3 class="text-center">All Families</h3>
+
   <%@families.each do |family| %>
     <%= link_to family_path(family) do %>
       <p><%=family.family_name%></p>

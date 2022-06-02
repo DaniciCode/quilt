@@ -1,4 +1,5 @@
-<div>
+<h3 class="text-center">My families</h3>
+<div class="container-new">
   <%@families.each do |family| %>
     <%= link_to family_path(family) do %>
       <p><%=family.family_name%></p>

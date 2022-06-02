@@ -1,4 +1,4 @@
-require "open-uri"
+require 'open-uri'
 
 puts 'Destroy db of quiltmemory...'
 
@@ -37,7 +37,7 @@ user2_family1 = UserFamily.create(user:user6, family:family3)
 
 
 #Memories Seeds
-memory1 = Memory.create!(title:"Promotion Department", description:"memory -1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,3,22), location:"Madrid",user:user1)
+memory1 = Memory.create!(title:"Promotion Department", description:"memory -1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,3,22), location:"Lisboa",user:user1)
 memory2 = Memory.create(title:"Birthday", description:"memory -2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,5,15), location:"Madrid", user:user2)
 memory3 = Memory.create(title:"Graduation", description:"memory -3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,7,22), location:"Paris", user:user3)
 memory4 = Memory.create(title:"First Tree", description:"memory -4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum nisi non sapien eleifend, eu semper diam lobortis. Curabitur molestie, nisi non cursus aliquam, tellus.",date:Date.new(2022,6,16), location:"Berlim", user:user4)
@@ -49,13 +49,25 @@ photo1 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653
 #   photo.attach(io: photo1, filename: 'photo1.jpg', content_type: 'image/jpg')
 # end
 
-memory1.photo.attach(io: photo1, filename: 'photo1.jpg', content_type: 'image/jpg')
+#memory1.photo.attach(io: photo1, filename: 'photo1.jpg', content_type: 'image/jpg')
+#file = URI.open('https://kitt.lewagon.com/placeholder/users/arthur-littm')
+#memory1.photo.attach(io: file, filename: 'arthur.jpeg', content_type: 'image/jpeg')
+#memory1.save!
+
+memory1.photo.attach(
+  io: URI.open('https://i.pinimg.com/736x/5d/79/82/5d7982eda4896fe8fd1074b76498cfbd--unicorn-costume-unicorn-outfit.jpg'),
+  filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
+  content_type: 'image/jpg' # use the mime type of the attached file here
+  )
+  memory1.save!
+
 
 #photo2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/2_kkbmte.jpg')
 #memory2.photo.attach(io: photo2, filename: 'photo2.jpg', content_type: 'image/jpg')
 
 file2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1653488319/grannie%20seeds/funny-portraits-with-old-grandmother-2022-02-03-11-46-06-utc_ydbab2.jpg')
 memory2.photo.attach(io: file2, filename: 'file2.jpg', content_type: 'image/jpg')
+
 
 
 photo3 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/3_mlg6fg.jpg')

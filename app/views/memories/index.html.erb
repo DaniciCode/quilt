@@ -1,22 +1,23 @@
 <%# if  memory belongs? to scrapbook do not appear in user memories%>
 <div class="timeline mt-4">
   <%@memories.each do |memory| %>
-    <% memory.id.even? ? side = "left" : side = "right" %>
+  <%= render "modal", memory: memory %>
+  <% memory.id.even? ? side = "left" : side = "right" %>
   <div class="container-timeline <%= side %>">
     <div class="content">
-
-      <%= link_to memory_path(memory) do %>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#memory-<%= memory.id %>">
       <p><%=memory.title%></p>
       <p><%=memory.date%></p>
       <p><%=memory.location%></p>
         <% if memory.photo.attached? %>
         <%=cl_image_tag memory.photo.key, width: 300   %>
         <% end %>
-      <%end%>
+      </a>
     </div>
   </div>
   <%end %>
 <div>
+
 <%= link_to "Create new memory", new_memory_path %>
 <%#= link_to "Create new family",  %>
 </div>

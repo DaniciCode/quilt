@@ -1,4 +1,5 @@
 require 'open-uri'
+require "byebug"
 
 puts 'Destroy db of quiltmemory...'
 
@@ -89,6 +90,7 @@ memory1.photo.attach(
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
   content_type: 'image/jpg' # use the mime type of the attached file here
   )
+
   memory1.save!
 
 
@@ -97,7 +99,6 @@ memory1.photo.attach(
 
 file2 = URI.open('https://stylecaster.com/wp-content/uploads/2013/08/bsxvzmzceaif3wx.jpeg?resize=768,879')
 memory2.photo.attach(io: file2, filename: 'file2.jpg', content_type: 'image/jpeg')
-
 
 
 photo3 = URI.open('https://www.geo.tv/assets/uploads/updates/2021-08-27/367371_5495181_updates.jpg')

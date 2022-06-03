@@ -39,7 +39,6 @@
 img, svg {
   object-fit: cover;
   border-radius: 6px;
-  opacity: 0.8;
 }
 
 .memory-image-model {
@@ -50,4 +49,8 @@ img, svg {
 }
 .text-modal {
   text-align: left;
+}
+.modal-content {
+  border-radius: 6px;
+  border: none;
 }

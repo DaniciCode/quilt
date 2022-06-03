@@ -4,23 +4,20 @@
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></i></button>
       </div>
-      <div class="modal-body">
-        <div class="d-flex justify-content">
-         <div>
+      <div class="modal-body card">
+        <div class="d-colum justify-content-center">
            <% if  memory.photo.attached? %>
-            <%=cl_image_tag memory.photo.key, width: 300  %>
+            <%=cl_image_tag memory.photo.key, width: 450, class: "memory-image-model" %>
            <% end %>
-         </div>
-         <div>
+        </div>
+        <div class="d-colum justify-content-center mt-3">
             <h4><%= memory.title%></h4>
             <p><%= memory.description%></p>
             <p><%= memory.date%></p>
             <p><%= memory.location%></p>
-         </div>
         </div>
-
-
-        <div class="sm-sl trash">
+      </div>
+        <div class="sm-sl trash ">
              <%= link_to memory, method: :delete, data: { confirm: 'Are you sure?' } do %>
              <i class="fas fa-trash icon-trash"></i>
              <% end %>

@@ -16,7 +16,7 @@ user1 = User.create(email: "kimk@gmail.com", password: "123456", first_name: "Ki
 user2 = User.create(email: "goldigger@gmail.com", password: "123456", first_name: "Kanye", last_name: "West", age: Date.new(1978,7,13))
 user3 = User.create(email: "khloe@gmail.com", password: "123456", first_name: "Khloe", last_name: "Kardashian", age: Date.new(1980,8,22))
 user4 = User.create(email: "dash@gmail.com", password: "123456", first_name: "Kourtney", last_name: "Kardashian", age: Date.new(1984,10,31))
-user5 = User.create(email: "blinktravis@gmail.com", password: "123456", first_name: "Travis", last_name: "Baker", age: Date.new(1982,12,12))
+user5 = User.create(email: "blinktravis@gmail.com", password: "123456", first_name: "Travis", last_name: "Barker", age: Date.new(1982,12,12))
 user6 = User.create(email: "momanager@gmail.com", password: "123456", first_name: "Kris", last_name: "Jenner", age: Date.new(1960,5,10))
 user7 = User.create(email: "kylie@gmail.com", password: "123456", first_name: "Kylie", last_name: "Jenner", age: Date.new(1998,5,10))
 user8 = User.create(email: "cat@gmail.com", password: "123456", first_name: "Cathelyn", last_name: "Jenner", age: Date.new(1950,5,10))
@@ -42,8 +42,14 @@ puts "Created #{users_now.count} new users"
 
 #Families Seeds
 family1 = Family.create(family_name:"Kardashians", description:"The Kardashians are here b*tches! A reality tv family so real that you can smell realness.", user:user1)
+photo12 = URI.open('https://ichef.bbci.co.uk/news/640/cpsprodpb/3A7A/production/_106307941_group.jpg')
+family1.photo.attach(io: photo12, filename: 'file12.jpg', content_type: 'image/jpeg')
 family2 = Family.create(family_name:"Skywalker" , description:"Family from a galaxy far far away. The father is super mean and brothers were raised apart. Now trying to rebuild that relationship.", user:user10)
+photo13 = URI.open('https://images2.minutemediacdn.com/image/fetch/w_2000,h_2000,c_fit/https%3A%2F%2Fdorksideoftheforce.com%2Ffiles%2F2021%2F01%2FSkywalker-a-family-at-war-cover-web-28xlsw.jpg')
+family2.photo.attach(io: photo13, filename: 'file13.jpg', content_type: 'image/jpeg')
 family3 = Family.create(family_name:"Targeryan" , description:"Love for fire is never a good thing. Unless your are a real Targeryan. BYD, bring your own dragon. We only marry royalty and have a taste for incest.", user:user17)
+photo14 = URI.open('https://prismacientifico.files.wordpress.com/2014/09/daenerys-and-viserys-house-targaryen-30464450-1280-720.jpg')
+family3.photo.attach(io: photo14, filename: 'file14.jpg', content_type: 'image/jpeg')
 
 #User Families
 user1_family1 = UserFamily.create(user:user1, family:family1)
@@ -68,52 +74,50 @@ user17_family3 = UserFamily.create(user:user17, family:family3)
 
 
 #Memories Seeds
+#kim k
 memory1 = Memory.create!(title:"I wore Marilyn Monroe Dress", description:"I only eat nothing but tomatoes for 2 weeks. Damn you Marilyn you were skinny",date:Date.new(2022,3,22), location:"New York",user:user1)
-memory2 = Memory.create(title:"Birth of North West", description:"The day I felt complete, I never knew I could be so happy",date:Date.new(2017,5,15), location:"California", user:user1)
-memory3 = Memory.create(title:"Marriage to Kanye", description:"I really loved Kanye. I was so happy", date:Date.new(2016,7,22), location:"Kalabassas", user:user1)
-memory4 = Memory.create(title:"My Perfume lauch", description:"The first step of the Kardashians' empire",date:Date.new(2006,6,16), location:"Los Angeles", user:user1)
-memory5 = Memory.create(title:"The first episode", description:"The Kardashians are HERE.",date:Date.new(2002,12,12), location:"Calabassas", user:user1)
-memory6 = Memory.create(title:"The first time I got drunk", description:"I'm never drinking again!!!",date:Date.new(2006,10,2), location:"Los Angeles", user:user1)
-
-#photo1 = URI.open('https://conteudo.imguol.com.br/c/entretenimento/b5/2022/05/02/kim-kardashian--jean-louis-1651539650959_v2_450x600.jpg.webp')
-# memory1.photos.each do |photo|
-#   photo.attach(io: photo1, filename: 'photo1.jpg', content_type: 'image/jpg')
-# end
-
-#memory1.photo.attach(io: photo1, filename: 'photo1.jpg', content_type: 'image/jpg')
-#file = URI.open('https://kitt.lewagon.com/placeholder/users/arthur-littm')
-#memory1.photo.attach(io: file, filename: 'arthur.jpeg', content_type: 'image/jpeg')
-#memory1.save!
-
 memory1.photo.attach(
   io: URI.open('https://conteudo.imguol.com.br/c/entretenimento/b5/2022/05/02/kim-kardashian--jean-louis-1651539650959_v2_450x600.jpg'),
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
   content_type: 'image/jpg' # use the mime type of the attached file here
   )
-
   memory1.save!
-
-
-#photo2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1653996493/Quilt/Seeds/Memories%20Photos/2_kkbmte.jpg')
-#memory2.photo.attach(io: photo2, filename: 'photo2.jpg', content_type: 'image/jpg')
-
+memory2 = Memory.create(title:"Birth of North West", description:"The day I felt complete, I never knew I could be so happy",date:Date.new(2017,5,15), location:"California", user:user1)
 file2 = URI.open('https://stylecaster.com/wp-content/uploads/2013/08/bsxvzmzceaif3wx.jpeg?resize=768,879')
 memory2.photo.attach(io: file2, filename: 'file2.jpg', content_type: 'image/jpeg')
-
-
+memory3 = Memory.create(title:"Marriage to Kanye", description:"I really loved Kanye. I was so happy", date:Date.new(2016,7,22), location:"Kalabassas", user:user1)
 photo3 = URI.open('https://www.geo.tv/assets/uploads/updates/2021-08-27/367371_5495181_updates.jpg')
 memory3.photo.attach(io: photo3, filename: 'photo3.jpg', content_type: 'image/jpg')
+memory4 = Memory.create(title:"My Perfume lauch", description:"The first step of the Kardashians' empire",date:Date.new(2006,6,16), location:"Los Angeles", user:user1)
 photo4 = URI.open('https://c8.alamy.com/comp/BTRKNB/kim-kardashian-fragrance-launch-BTRKNB.jpg')
 memory4.photo.attach(io: photo4, filename: 'photo4.jpg', content_type: 'image/jpg')
+memory5 = Memory.create(title:"The first episode", description:"The Kardashians are HERE.",date:Date.new(2002,12,12), location:"Calabassas", user:user1)
 photo5 = URI.open('https://pyxis.nymag.com/v1/imgs/0ca/3e5/ce5a9dd47416d04b9b666c273dcf8f2f14-18-keeping-up-with-the-kardashians-seaso.rsquare.w700.jpg')
 memory5.photo.attach(io: photo5, filename: 'photo5.jpg', content_type: 'image/jpg')
+memory6 = Memory.create(title:"The first time I got drunk", description:"I'm never drinking again!!!",date:Date.new(2006,10,2), location:"Los Angeles", user:user1)
 photo6 = URI.open('https://i.pinimg.com/736x/66/67/84/666784121914e54f8a8824fb61673d78--drunk-in-love-paris-hilton.jpg')
 memory6.photo.attach(io: photo6, filename: 'photo6.jpg', content_type: 'image/jpg')
 
-file7 = URI.open('https://studiosol-a.akamaihd.net/gcs/cifra-blog/pt/wp-content/uploads/2021/08/f085491-mgk-yungblud-travis_emo-pop-punk.jpg')
+#Travis Barker
+memory7 = Memory.create(title:"Me and my homies", description: "Just chillin... Those were the days", date:Date.new(2006,06,10), location:"Los Anjos", user:user5)
+photo7 = URI.open('https://studiosol-a.akamaihd.net/gcs/cifra-blog/pt/wp-content/uploads/2021/08/f085491-mgk-yungblud-travis_emo-pop-punk.jpg')
+memory7.photo.attach(io: photo7, filename: 'photo7.jpg', content_type: 'image/jpg')
+
+memory8 = Memory.create(title:"Rock'n'roll is not dead!", description: "Playing drums naked for Blink 182", date:Date.new(2000,06,10), location:"Los Anjos", user:user5)
+photo8 = URI.open('https://www.ultimate-guitar.com/static/article/news/9/69049_0_wide_ver1524585782.jpg')
+memory8.photo.attach(io: photo8, filename: 'photo8.jpg', content_type: 'image/jpg')
+
+memory9 = Memory.create(title:"Love partying!", description: "I will party until I'm dead! Travis is the KIIIING!", date:Date.new(2003,06,10), location:"Los Anjos", user:user5)
+photo9 = URI.open('https://www.etonline.com/sites/default/files/images/2019-06/blink182_enemaofthestate.jpg')
+memory9.photo.attach(io: photo9, filename: 'photo9.jpg', content_type: 'image/jpg')
+
+memory10 = Memory.create(title:"Playing drums at Steve Aoki party", description: "Love playing drums. F*ck you jazz drumers. Thank god for Punk Rock!", date:Date.new(2004,06,10), location:"Los Anjos", user:user5)
+photo10 = URI.open('https://beatforbeat.com.br/site/wp-content/uploads/2016/08/Aoki-1.jpg')
+memory10.photo.attach(io: photo10, filename: 'photo10.jpg', content_type: 'image/jpg')
+
+memory11 = Memory.create(title:"Kourtney and Travis go to Venice", description: "Kourtney doesn't know yet but I will propose", date:Date.new(2021,06,10), location:"Venice", user: user5)
+photo11 = URI.open('https://www.usmagazine.com/wp-content/uploads/2021/10/Kourtney-Kardashian-Travis-Barker-Want-Baby-Together-Without-Any-Doubt-0001.jpg?w=1600&quality=86&strip=all')
+memory11.photo.attach(io: photo11, filename: 'photo11.jpg', content_type: 'image/jpg')
+
 #do a times do with photos of Travis
 #and a last one of him with kourtney
-
-#5.times do
-  #Memory.create!(title:"Rock'n'roll", description:"I wanna rock! Hell yeah. Foreva young dudes!",date:Date.new(2022,3,22), location:"New York",user:user5).photo.attach(io: photo7, filename: 'photo7.jpg', content_type: 'image/jpg')
-#photo.attach(io: photo6, filename: 'photo6.jpg', content_type: 'image/jpg')end

@@ -28,11 +28,24 @@
     </div>
   </div>
   <%end %>
+<div class="btn-index-geral">
+   <div class="sm-sl">
+      <%= link_to families_path do %>
+        <i class="fas fa-users btn-index2"></i>
+      <% end %>
+  </div>
+  <div class="sm-sl">
+       <i class="fas fa-search btn-index1"></i>
+  </div>
+   <div class="sm-sl">
+      <%= link_to new_memory_path do %>
+        <i class="fas fa-plus btn-index"></i>
+      <% end %>
+   </div>
 
-<div>
-<%= link_to "Add your memory", new_memory_path %>
-</div>
-<div>
-<%= link_to "See all families", families_path %>
-<%#= link_to "Create new family",  %>
+
+
+
+
+
 </div>

@@ -1,5 +1,5 @@
 require 'open-uri'
-require "byebug"
+#require "byebug"
 
 puts 'Destroy db of quiltmemory...'
 

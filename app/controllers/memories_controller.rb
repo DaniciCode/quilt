@@ -1,8 +1,8 @@
 class MemoriesController < ApplicationController
   def index
-    @memories = Memory.all
+    #@memories = Memory.all
     #se memorias do proprio user
-    #@memories = Memory.where(user: current_user)
+    @memories = Memory.where(user: current_user)
   end
 
   def show

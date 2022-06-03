@@ -13,6 +13,13 @@
 .icon-trash{
   color: #7353B7;
   font-size: 20px;
+  position: absolute;
+  bottom: 40px;
+  right: 25px;
+  opacity: 1;
+}
+.icon-trash:hover {
+  opacity: 0.6;
 }
 
 .btn-memory{
@@ -27,4 +34,20 @@
   min-width: 250px;
   display: inline-block;
   vertical-align: top;
+}
+
+img, svg {
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: 0.8;
+}
+
+.memory-image-model {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.text-modal {
+  text-align: left;
 }

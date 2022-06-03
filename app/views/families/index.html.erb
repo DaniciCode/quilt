@@ -1,20 +1,20 @@
 <h3 class="text-center">All Families</h3>
-<div class="card">
-      <%@families.each do |family| %>
-      <%= link_to family_path(family) do %>
-   <div class="card-body">
-      <div class="card-img">
-      <% if family.photo.attached? %>
-          <%=cl_image_tag family.photo.key, width: 300   %>
+  <div class="">
+    <%@families.each do |family| %>
+    <%= link_to family_path(family) do %>
+    <div class="d-flex justify-content-between justcard-group">
+      <div class="card-img-top">
+        <% if family.photo.attached? %>
+        <%=cl_image_tag family.photo.key, width: 300 %>
         <% end %>
       </div>
-       <div class="card-title">
-        <p><%=family.family_name%></p>
+      <div class="card-title">
+        <h4><%=family.family_name%></h4>
       </div>
-       <div class="card-subtitle">
-         <p><%=family.description%></p>
+      <div class="card-subtitle">
+        <p><%=family.description%></p>
       </div>
         <%end%>
     <%end%>
+    </div>
   </div>
-</div>

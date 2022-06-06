@@ -29,5 +29,8 @@
       <% else %>
         <%= link_to "Leave this family", user_family_path(@user_family), method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
+      <% if @family_members.count == 1 || @family.users.include?(current_user) %>
+        <%= link_to "Delete this family", @family, method: :delete, data: {confirm: 'Are you sure?'} %>
+      <%end %>
    </div>
 </div>

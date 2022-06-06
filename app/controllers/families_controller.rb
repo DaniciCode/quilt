@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-  before_action :set_family, only: [ :show, :edit, :update ]
+  before_action :set_family, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @families = Family.all
@@ -38,6 +38,11 @@ class FamiliesController < ApplicationController
   def update
     @family.update(family_params)
     redirect_to family_path(@family)
+  end
+
+  def destroy
+    #if family with just one user enable destroy
+    @family.destroy
   end
 
   private

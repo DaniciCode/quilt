@@ -1,0 +1,2 @@
+class ScrapbookMemoriesController < ApplicationController
+end

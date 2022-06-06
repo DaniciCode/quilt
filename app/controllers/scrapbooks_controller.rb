@@ -3,6 +3,8 @@ class ScrapbooksController < ApplicationController
 
   def show
     @memories = @scrapbook.memories
+    @family = @scrapbook.family
+    @memory = Memory.new
   end
 
   def new
@@ -11,8 +13,11 @@ class ScrapbooksController < ApplicationController
 
   def create
     @scrapbook = Scrapbook.new(scrapbook_params)
+    @scrapbook.user = current_user
+    @family = Family.find(params[:family_id])
+    @scrapbook.family = Family.find(params[:family_id])
     if @scrapbook.save
-      redirect_to family_scrapbook_path
+      redirect_to family_scrapbook_path(@family, @scrapbook)
     else
       render :new
     end

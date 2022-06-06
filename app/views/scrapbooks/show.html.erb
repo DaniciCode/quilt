@@ -3,3 +3,5 @@
 <% unless @memories.empty? %>
   <%= render 'shared/timeline' %>
 <% end %>
+
+<%= link_to "Add memories to scrapbook", new_family_scrapbook_memory_path(@family, @scrapbook, @memory) %>

@@ -3,6 +3,7 @@
     <%@families.each do |family| %>
     <%= link_to family_path(family) do %>
     <div class="d-flex justify-content-between justcard-group">
+
       <div class="card-img-top">
         <% if family.photo.attached? %>
         <%=cl_image_tag family.photo.key, width: 300 %>
@@ -18,7 +19,7 @@
     <%end%>
     </div>
   </div>
-
+  </a>
 </div>
 
 
@@ -46,10 +47,11 @@
 <div class="dropdown">
   <button class="dropbtn"><i class="fas fa-plus btn-index"></i></button>
   <div class="dropdown-content">
+
     <a href="#">Create a Family</a>
+
     <a href="#">Create a Memory</a>
   </div>
 </div>
 
 </div>
-

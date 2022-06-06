@@ -1,9 +1,12 @@
+<h3 class="text-center">All Families</h3>
+
 <div class="container">
   <div class="row">
     <% @families.each do |family| %>
+    <%= render "modalnew", my_family: family%>
     <div class="col-4">
       <div class="card my-2">
-      <%= link_to family_path(family) do %>
+      <a href="#" data-bs-toggle="modal" data-bs-target="#memory-<%= memory.id %>">
           <div class="card-img-top">
               <% if family.photo.attached? %>
               <%= cl_image_tag family.photo.key, width: 410, height: 180 %>
@@ -17,14 +20,9 @@
       <%end%>
     </div>
     </div>
-    <%end%>
+
+    <%= link_to "Edit Family" %>
+  <%= link_to "Add Member" %>
+    </a>
   </div>
 </div>
-
-
-
-
-
-
-  <%= link_to "Edit Family" %>
-  <%= link_to "Add Member" %>

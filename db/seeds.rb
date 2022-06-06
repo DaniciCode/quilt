@@ -50,6 +50,18 @@ family2.photo.attach(io: photo13, filename: 'file13.jpg', content_type: 'image/j
 family3 = Family.create(family_name:"Targeryan" , description:"Love for fire is never a good thing. Unless your are a real Targeryan. BYD, bring your own dragon. We only marry royalty and have a taste for incest.", user:user17)
 photo14 = URI.open('https://prismacientifico.files.wordpress.com/2014/09/daenerys-and-viserys-house-targaryen-30464450-1280-720.jpg')
 family3.photo.attach(io: photo14, filename: 'file14.jpg', content_type: 'image/jpeg')
+family4 = Family.create(family_name:"Corleone" , description:"A godfather is born!", user:user17)
+photo15 = URI.open('https://static.wixstatic.com/media/f1f948_0f301140db024972bd5734681611e018~mv2.png/v1/fill/w_835,h_420,al_c/f1f948_0f301140db024972bd5734681611e018~mv2.png')
+family4.photo.attach(io: photo15, filename: 'file15.png', content_type: 'image/png')
+
+family5 = Family.create(family_name:"Simpsons" , description:"We stayed forever with same age", user:user16)
+photo16 = URI.open('https://www.liveabout.com/thmb/lmXH_qkltl-jiF65ZujTQ2_5k7Q=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/simpsons1920-58b5a0013df78cdcd87a03bc.jpg')
+family5.photo.attach(io: photo16, filename: 'file16.jpg', content_type: 'image/jpg')
+
+family6 = Family.create(family_name:"Manson Family" , description:"Stay away from charismatic leaders and drugs, kids!", user:user15)
+photo17 = URI.open('https://br.web.img3.acsta.net/r_1280_720/pictures/15/02/26/18/03/287837.jpg')
+family6.photo.attach(io: photo17, filename: 'file17.jpg', content_type: 'image/jpg')
+
 
 
 #User Families
@@ -120,5 +132,8 @@ memory11 = Memory.create(title:"Kourtney and Travis go to Venice", description: 
 photo11 = URI.open('https://www.usmagazine.com/wp-content/uploads/2021/10/Kourtney-Kardashian-Travis-Barker-Want-Baby-Together-Without-Any-Doubt-0001.jpg?w=1600&quality=86&strip=all')
 memory11.photo.attach(io: photo11, filename: 'photo11.jpg', content_type: 'image/jpg')
 
-#do a times do with photos of Travis
-#and a last one of him with kourtney
+#Scrapbook seeds
+
+#scrap1 = Scrapbook.create(scrapbook_title: "Holidays", scrapbook_description: "Best Holidays in my life", user:user1, family:family1)
+#scrap2 = Scrapbook.create(scrapbook_title: "Christmas with autie Velma", scrapbook_description: "Autie Velma is the best", user:user1, family:family1)
+#scrap3 = Scrapbook.create(scrapbook_title: "North West growing up", scrapbook_description: "My little one is so big", user:user1, family:family1)

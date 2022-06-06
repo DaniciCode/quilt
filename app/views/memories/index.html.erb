@@ -1,35 +1,7 @@
-<%# if  memory belongs? to scrapbook do not appear in user memories%>
-<div class="timeline mt-5">
-  <%@memories.each do |memory| %>
-  <%= render "modal", memory: memory %>
-  <% memory.id.even? ? side = "left" : side = "right" %>
-  <div class="container-timeline <%= side %>">
-    <div class="content">
-      <a href="#" data-bs-toggle="modal" data-bs-target="#memory-<%= memory.id %>">
-        <div class="row justify-content">
-          <div class="col-sm-12 col-md-4">
-            <% if memory.photo.attached? %>
-            <%=cl_image_tag memory.photo.key, width: 120, class: "memory-image"   %>
-            <% end %>
-          </div>
-          <div class="col-sm-12 col-md-8">
-          <div class="d-colm justify-content-between">
-            <h4><strong><%=memory.title%></strong></h4>
-            <p><%=memory.date%></p>
-          </div>
-            <p><%=memory.description.first(99)%>...</p>
-              <div class="d-flex justify-content-between">
-              <p class="text-muted"><strong>by:</strong><%=memory.user.name%></p>
-              <p><strong><%=memory.location%></strong></p>
-              </div>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <%end %>
-</div>
+<%# Timeline Render %>
+<%= render 'shared/timeline' %>
 
+<%# btn user timeline %>
 <div class="btn-index-geral">
    <div class="sm-sl">
       <%= link_to my_families_path do %>
@@ -44,4 +16,5 @@
         <i class="fas fa-plus btn-index"></i>
       <% end %>
    </div>
+   a
 </div>

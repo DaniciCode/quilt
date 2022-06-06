@@ -14,6 +14,7 @@ class FamiliesController < ApplicationController
 
   def show
     @family_members = @family.users
+    @scrapbooks = @family.scrapbooks
     #@user_family = UserFamily.new
     @user_family = UserFamily.find_by(family: @family, user: current_user)
   end
@@ -36,8 +37,11 @@ class FamiliesController < ApplicationController
   def edit; end
 
   def update
-    @family.update(family_params)
-    redirect_to family_path(@family)
+    if @family.update(family_params)
+      redirect_to my_families_path
+    else
+      render :edit
+    end
   end
 
   def destroy

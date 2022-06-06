@@ -18,7 +18,7 @@
 
       <%= link_to "Back", families_path %>
       <% if @family.user == current_user %>
-        <%= link_to "Update family details", edit_family_path %>
+        <%= link_to "Update family details", edit_family_path(@family) %>
       <%end  %>
       <%# <% unless @family.users.find(current_user.id) %>
         <%# <%= simple_form_for [@family, @user_family ] do |f| %>
@@ -34,3 +34,7 @@
       <%end %>
    </div>
 </div>
+<% @scrapbooks.each do |scrapbook| %>
+<%= link_to scrapbook.scrapbook_title, family_scrapbook_path(@family, scrapbook)  %>
+<%=  %>
+<%end %>

@@ -1,8 +1,9 @@
 .btn-index-geral{
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   position: fixed;
-  bottom: 280px;
-  right: 20px;
+  bottom: 270px;
+  right: 70px;
 }
 
 .btn-index{
@@ -12,28 +13,6 @@
   font-size: 35px;
 }
 
-.btn-index2{
-  text-decoration: none;
-  padding: 10px 0;
-  color: #5c348e;
-  font-size: 35px;
-}
-
-.btn-index1{
-  text-decoration: none;
-  font-size: 33px;
-  color: #5c348e;
-  padding: 10px 0;
-}
-
-.btn-index:hover{
-  opacity: 0.6;
-}
-
-.btn-index2:hover{
-  opacity: 0.6;
-}
-
-.btn-index1:hover{
+.btn-index:hover {
   opacity: 0.6;
 }

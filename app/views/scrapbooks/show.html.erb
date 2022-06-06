@@ -1,2 +1,5 @@
 <h2>Eu sou o show do scrapbook</h2>
 <p> <%= @scrapbook.scrapbook_title %></p>
+<% unless @memories.empty? %>
+  <%= render 'shared/timeline' %>
+<% end %>

@@ -36,5 +36,6 @@
 </div>
 <% @scrapbooks.each do |scrapbook| %>
 <%= link_to scrapbook.scrapbook_title, family_scrapbook_path(@family, scrapbook)  %>
-<%=  %>
 <%end %>
+
+<%= link_to "Create new Scrapbook", new_family_scrapbook_path(@family) %>

@@ -66,7 +66,7 @@ family6.photo.attach(io: photo17, filename: 'file17.jpg', content_type: 'image/j
 
 #User Families
 user1_family1 = UserFamily.create(user:user1, family:family1)
-user2_family1 = UserFamily.create(user:user2, family:family1)
+user1_family2 = UserFamily.create(user:user2, family:family2)
 user3_family1 = UserFamily.create(user:user3, family:family1)
 user4_family1 = UserFamily.create(user:user4, family:family1)
 #user5_family1 = UserFamily.create(user:user5, family:family1)

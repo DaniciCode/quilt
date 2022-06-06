@@ -38,9 +38,30 @@ user15 = User.create(email: "iknownothing@gmail.com", password: "123456", first_
 user16 = User.create(email: "gold@gmail.com", password: "123456", first_name: "Viserys", last_name: "Targeryan", age: Date.new(1995,5,10))
 user17 = User.create(email: "motherofdragons@gmail.com", password: "123456", first_name: "Danerys", last_name: "Targeryan", age: Date.new(1990,5,10))
 
+#Demoday
+user18 = User.create(email: "anabandarra@gmail.com", password: "123456", first_name: "Ana", last_name: "Bandarra", age: Date.new(1984,12,15))
+user19 = User.create(email: "ripaulo@gmail.com", password: "123456", first_name: "Ricardo", last_name: "Paulo", age: Date.new(1984,12,15))
+user20 = User.create(email: "martanunes@gmail.com", password: "123456", first_name: "Marta", last_name: "Nunes", age: Date.new(1984,12,15))
+user21 = User.create(email: "miguelito@gmail.com", password: "123456", first_name: "Carson Miguelito", last_name: "de Alcantara", age: Date.new(1984,12,15))
+user22 = User.create(email: "carlos@gmail.com", password: "123456", first_name: "Carlos", last_name: "Imeldo", age: Date.new(1984,12,15))
+user23 = User.create(email: "nathalie@gmail.com", password: "123456", first_name: "Nath", last_name: "Nathalie", age: Date.new(1984,12,15))
+user24 = User.create(email: "Tito@gmail.com", password: "123456", first_name: "Tito", last_name: "Carmo", age: Date.new(1984,12,15))
+user25 = User.create(email: "deliocarvalho@gmail.com", password: "123456", first_name: "Delio", last_name: "Carvalho", age: Date.new(1984,12,15))
+user26 = User.create(email: "raimundo@gmail.com", password: "123456", first_name: "Raimundo", last_name: "Bandarra", age: Date.new(1984,12,15))
+user27 = User.create(email: "ricardosilva@gmail.com", password: "123456", first_name: "Ricardo", last_name: "Silva", age: Date.new(1984,12,15))
+user28 = User.create(email: "Sayonara@gmail.com", password: "123456", first_name: "Sayonara", last_name: "Bandarra", age: Date.new(1984,12,15))
+user29 = User.create(email: "Larilui@gmail.com", password: "123456", first_name: "Larissa", last_name: "Hury", age: Date.new(1984,12,15))
+user30 = User.create(email: "joseappletton@gmail.com", password: "123456", first_name: "Jose", last_name: "Appleton", age: Date.new(1984,12,15))
+user31 = User.create(email: "guyganbaruch@gmail.com", password: "123456", first_name: "Guy", last_name: "Baruch", age: Date.new(1984,12,15))
+user32 = User.create(email: "sydney@gmail.com", password: "123456", first_name: "Sydney", last_name: "Bandarra", age: Date.new(1984,12,15))
+user33 = User.create(email: "Rodrigo@gmail.com", password: "123456", first_name: "Rodrigo", last_name: "Bandarra", age: Date.new(1984,12,15))
+user34 = User.create(email: "Andras@gmail.com", password: "123456", first_name: "Andras", last_name: "Bandarra", age: Date.new(1984,12,15))
+user35 = User.create(email: "dimosamouris@gmail.com", password: "123456", first_name: "Dimitris", last_name: "Samouris", age: Date.new(1984,12,15))
+user36 = User.create(email: "ricardogonzalez@gmail.com", password: "123456", first_name: "Ricardo", last_name: "Gonzalez", age: Date.new(1984,12,15))
 
 
-users_now = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15, user16, user17]
+
+users_now = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15, user16, user17, user18]
 
 puts "Created #{users_now.count} new users"
 

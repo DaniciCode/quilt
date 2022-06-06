@@ -10,14 +10,21 @@ class MemoriesController < ApplicationController
   end
 
   def new
+    @family = Family.find(params[:family_id])
+    @scrapbook = Scrapbook.find(params[:scrapbook_id])
     @memory = Memory.new
   end
 
   def create
     @memory = Memory.new(memory_params)
     @memory.user = current_user
+    @scrapbook = Scrapbook.find(params[:scrapbook_id])
+    @family = Family.find(params[:family_id])
+
     if @memory.save
-      redirect_to memories_path
+      @scrapbook_memory = ScrapbookMemory.new(memory: @memory, scrapbook: @scrapbook)
+      @scrapbook_memory.save
+      redirect_to family_scrapbook_path(@family, @scrapbook)
     else
       render :new
     end

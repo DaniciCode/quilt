@@ -51,6 +51,7 @@ family3 = Family.create(family_name:"Targeryan" , description:"Love for fire is 
 photo14 = URI.open('https://prismacientifico.files.wordpress.com/2014/09/daenerys-and-viserys-house-targaryen-30464450-1280-720.jpg')
 family3.photo.attach(io: photo14, filename: 'file14.jpg', content_type: 'image/jpeg')
 
+
 #User Families
 user1_family1 = UserFamily.create(user:user1, family:family1)
 user2_family1 = UserFamily.create(user:user2, family:family1)

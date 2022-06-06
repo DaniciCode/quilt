@@ -3,10 +3,14 @@ require 'open-uri'
 
 puts 'Destroy db of quiltmemory...'
 
+ScrapbookMemory.destroy_all
+Scrapbook.destroy_all
 Memory.destroy_all
 UserFamily.destroy_all
 Family.destroy_all
 User.destroy_all
+
+
 
 
 #User Seeds
@@ -66,7 +70,7 @@ family6.photo.attach(io: photo17, filename: 'file17.jpg', content_type: 'image/j
 
 #User Families
 user1_family1 = UserFamily.create(user:user1, family:family1)
-user2_family1 = UserFamily.create(user:user2, family:family1)
+user1_family2 = UserFamily.create(user:user2, family:family2)
 user3_family1 = UserFamily.create(user:user3, family:family1)
 user4_family1 = UserFamily.create(user:user4, family:family1)
 #user5_family1 = UserFamily.create(user:user5, family:family1)
@@ -134,6 +138,24 @@ memory11.photo.attach(io: photo11, filename: 'photo11.jpg', content_type: 'image
 
 #Scrapbook seeds
 
-#scrap1 = Scrapbook.create(scrapbook_title: "Holidays", scrapbook_description: "Best Holidays in my life", user:user1, family:family1)
-#scrap2 = Scrapbook.create(scrapbook_title: "Christmas with autie Velma", scrapbook_description: "Autie Velma is the best", user:user1, family:family1)
-#scrap3 = Scrapbook.create(scrapbook_title: "North West growing up", scrapbook_description: "My little one is so big", user:user1, family:family1)
+scrap1 = Scrapbook.create(scrapbook_title: "Summer Holidays 2020", scrapbook_description: "Best Holidays in my life", user:user1, family:family1)
+scrap2 = Scrapbook.create(scrapbook_title: "Christmas with autie Velma", scrapbook_description: "Autie Velma is the best", user:user1, family:family1)
+scrap3 = Scrapbook.create(scrapbook_title: "North West growing up", scrapbook_description: "My little one is so big", user:user1, family:family1)
+scrap4 = Scrapbook.create(scrapbook_title: "Divorce party", scrapbook_description: "That's why god created divorces", user:user1, family:family1)
+scrap5 = Scrapbook.create(scrapbook_title: "Christmas parties", scrapbook_description: "All Christmas from 1984 til 2021", user:user1, family:family1)
+scrap6 = Scrapbook.create(scrapbook_title: "Going out with my friends", scrapbook_description: "Party like it's 1994", user:user1, family:family1)
+scrap7 = Scrapbook.create(scrapbook_title: "Just a perfect day", scrapbook_description: "Drink sangria in the park", user:user1, family:family1)
+
+#MemoryScrapbook
+
+Memscrap1 = ScrapbookMemory.create(memory: memory1, scrapbook: scrap4)
+Memscrap2 = ScrapbookMemory.create(memory: memory2, scrapbook: scrap4)
+Memscrap3 = ScrapbookMemory.create(memory: memory3, scrapbook: scrap4)
+Memscrap4 = ScrapbookMemory.create(memory: memory4, scrapbook: scrap4)
+Memscrap5 = ScrapbookMemory.create(memory: memory5, scrapbook: scrap4)
+Memscrap6 = ScrapbookMemory.create(memory: memory6, scrapbook: scrap4)
+Memscrap7 = ScrapbookMemory.create(memory: memory7, scrapbook: scrap7)
+Memscrap8 = ScrapbookMemory.create(memory: memory8, scrapbook: scrap7)
+Memscrap9 = ScrapbookMemory.create(memory: memory9, scrapbook: scrap7)
+Memscrap10 = ScrapbookMemory.create(memory: memory10, scrapbook: scrap7)
+Memscrap11 = ScrapbookMemory.create(memory: memory11, scrapbook: scrap7)

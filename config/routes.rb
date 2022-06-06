@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   resources :memories, except: :update
   resources :families
   get "my_families", to: 'families#my_families'
-    #resources :user_families, only: [:create , :destroy]
-    #resources :scrapbook, only: :create (depende se pertence a familia)
-
   resources :user_families, only: [:create , :destroy]
-  #resources :scrapbook, only: :destroy
-  #resources :scrapbook_memories, only: :destroy
+  #resources :scrapbooks
+  #get "my_scrapbooks", to: 'scrapbook#my_scrapbooks'
+  #resources :scrapbook_memories, only: [:create, :destroy]
 end

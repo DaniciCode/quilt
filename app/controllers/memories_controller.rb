@@ -3,6 +3,7 @@ class MemoriesController < ApplicationController
     #@memories = Memory.all
     #se memorias do proprio user
     @memories = Memory.where(user: current_user)
+    @family = Family.new
   end
 
   def show

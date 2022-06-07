@@ -6,7 +6,7 @@
 
 
 <div class="dropdown ">
-  <button class="dropbtn"><i class="fas fa-users btn-index"></i></button>
+  <a class="dropbtn"><i class="fas fa-users btn-index"></i></button>
     <div class="dropdown-content">
       <ul>
        <%current_user.families.each do |family| %>
@@ -23,14 +23,14 @@
 </div>
 
 <div class="dropdown">
-  <button class="dropbtn"><i class="fas fa-plus btn-index"></i></button>
+  <a class="dropbtn"><i class="fas fa-plus btn-index"></i></a>
   <div class="dropdown-content">
-    <button type="button" data-bs-toggle="modal" data-bs-target="#CreateFamilyModal">
+    <a type="button" data-bs-toggle="modal" data-bs-target="#CreateFamilyModal">
       Create a Family
-    </button>
-    <button type="button" data-bs-toggle="modal" data-bs-target="#CreateNewMemory">
+    </a>
+    <a type="button" data-bs-toggle="modal" data-bs-target="#CreateNewMemory">
       Create a Memory
-    </button>
+    </a>
 
   </div>
 
@@ -55,8 +55,7 @@
               <%= f.input :description %>
               <%= f.input :photo, as: :file  %>
               </div>
-              <div class="form-actions">
-              <%= f.submit %>
+              <%= f.button :submit, "Submit" %>
               </div>
         <% end %>
       </div>
@@ -86,7 +85,7 @@
           <%= f.button :submit, "Submit" %>
           </div>
         <% end %>
-         <%= link_to "Back", memories_path %>
+
 </div>
       </div>
     </div>

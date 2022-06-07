@@ -2,13 +2,14 @@
   background-color: transparent;
   padding: 2px;
   font-size: 2px;
-  border: none;
+  border: transparent;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
+  border: transparent;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -17,8 +18,8 @@
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+  border: transparent;
 
 
 }
@@ -29,16 +30,23 @@
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-
+  border: transparent;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border: transparent;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  border: transparent;
 
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
+.caixa{
+ border: transparent!important;
+}

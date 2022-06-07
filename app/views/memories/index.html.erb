@@ -28,8 +28,10 @@
     <button type="button" data-bs-toggle="modal" data-bs-target="#CreateFamilyModal">
       Create a Family
     </button>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#CreateNewMemory">
+      Create a Memory
+    </button>
 
-    <a href="#">Create a Memory</a>
   </div>
 
 </div>
@@ -57,6 +59,35 @@
               <%= f.submit %>
               </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Create Memory-->
+
+<div class="modal fade " id="CreateNewMemory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <h3>Create a Memory</h3>
+        <%= simple_form_for [@memory], url: create_only_memory_path  do |f| %>
+          <div class="form-inputs">
+            <%= f.input :title %>
+            <%= f.input :date %>
+            <%= f.input :location %>
+            <%= f.input :description %>
+            <%= f.input :photo, as: :file  %>
+          </div>
+          <div class="form-actions">
+          <%= f.button :submit, "Submit" %>
+          </div>
+        <% end %>
+         <%= link_to "Back", memories_path %>
+</div>
       </div>
     </div>
   </div>

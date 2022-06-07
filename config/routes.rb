@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :memories, only: :index
+  post "create_only_memory", to: 'memories#create_only_memory'
   resources :families do
      resources :scrapbooks, only: [:show , :new, :create] do
        resources :memories

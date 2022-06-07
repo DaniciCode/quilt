@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post "create_only_memory", to: 'memories#create_only_memory'
   resources :memories, only: [:index, :destroy]
   resources :families do
+    resources :user_families, only: [:new, :create]
      resources :scrapbooks, only: [:show , :new, :create] do
        resources :memories, except: :destroy
        resources :scrapbook_memories, only: [:new, :create]

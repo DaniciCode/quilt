@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :memories, only: [:index, :destroy]
   resources :families do
+    resources :user_families, only: [:new, :create]
      resources :scrapbooks, only: [:show , :new, :create] do
        resources :memories, except: :destroy
        resources :scrapbook_memories, only: [:new, :create]

@@ -1,5 +1,5 @@
 <div class="timeline mt-5">
-  <%@memories.each do |memory| %>
+  <%memories.each do |memory| %>
   <%= render "memories/modal", memory: memory %>
   <% memory.id.even? ? side = "left" : side = "right" %>
   <div class="container-timeline <%= side %>">

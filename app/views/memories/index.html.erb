@@ -36,14 +36,16 @@
 </div>
 
 <!-- Modal Create Family-->
-<div class="modal fade" id="CreateFamilyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+<div class="modal fade " id="CreateFamilyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+      <h3>Create a Memory</h3>
+
         <%= simple_form_for [@family],url:families_path do |f| %>
             <div class="form-inputs">
               <%= f.input :family_name %>

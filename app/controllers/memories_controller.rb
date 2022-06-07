@@ -33,8 +33,13 @@ class MemoriesController < ApplicationController
 
   def destroy
     @memory = Memory.find(params[:id])
-    @memory.destroy
-
+    @scrapbookmemory = ScrapbookMemory.where(memory: @memory).first
+    if @scrapbookmemory.nil?
+      @memory.destroy
+    else
+      @scrapbookmemory.destroy
+      @memory.destroy
+    end
     redirect_to memories_path
   end
 

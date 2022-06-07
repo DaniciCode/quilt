@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :memories, only: :index
+  resources :memories, only: [:index, :destroy]
   resources :families do
      resources :scrapbooks, only: [:show , :new, :create] do
-       resources :memories
+       resources :memories, except: :destroy
        resources :scrapbook_memories, only: [:new, :create]
     end
   end

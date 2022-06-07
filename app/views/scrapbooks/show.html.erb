@@ -1,7 +1,10 @@
 <h2>Eu sou o show do scrapbook</h2>
-<p> <%= @scrapbook.scrapbook_title %></p>
+<h3> <%= @scrapbook.scrapbook_title %></h3>
 <% unless @memories.empty? %>
   <%= render 'shared/timeline' %>
 <% end %>
 
-<%= link_to "Add memories to scrapbook", new_family_scrapbook_memory_path(@family, @scrapbook, @memory) %>
+<%= link_to "Add new memories to scrapbook", new_family_scrapbook_memory_path(@family, @scrapbook, @memory) %>
+<%# unless @scrapbook.memory.include?(memory.id) %>
+  <%= link_to "Add an existing memory to this scrapbook", new_family_scrapbook_scrapbook_memory_path(@family, @scrapbook, @memory)%>
+<%# end %>

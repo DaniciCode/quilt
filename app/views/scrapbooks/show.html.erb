@@ -1,8 +1,32 @@
-<h3> <%= @scrapbook.scrapbook_title %></h3>
+<h2> <%= @scrapbook.scrapbook_title %></h2>
 <% unless @memories.empty? %>
   <%= render 'shared/timeline' %>
 <% end %>
 
-<%= link_to "Add a new memory to scrapbook", new_family_scrapbook_memory_path(@family, @scrapbook, @memory) %>
-<%= link_to "Add an existing memory to this scrapbook", new_family_scrapbook_scrapbook_memory_path(@family, @scrapbook, @memory)%>
+
+<div class="btn-index-geral">
+<div class="dropdown ">
+  <button class="dropbtn"><i class="fas fa-user btn-index"></i></button>
+  <div class="dropdown-content">
+    <%= link_to "My Memories", memories_path %>
+  </div>
+</div>
+
+<div class="sm-sl">
+       <i class="fas fa-search btn-index"></i>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn"><i class="fas fa-plus btn-index"></i></button>
+  <div class="dropdown-content">
+    <%= link_to "Add a new memory to scrapbook", new_family_scrapbook_memory_path(@family, @scrapbook, @memory) %>
+    <%= link_to "Add an existing memory to this scrapbook", new_family_scrapbook_scrapbook_memory_path(@family, @scrapbook, @memory)%>
+  </div>
+</div>
+
+
+
+
+
+
 <%= link_to "Family scrapbook", family_path(@family) %>

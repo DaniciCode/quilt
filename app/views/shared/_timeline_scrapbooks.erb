@@ -1,0 +1,29 @@
+<div class="timeline mt-5">
+  <%scrapbooks.each do |scrapbook| %>
+  <% scrapbook.id.even? ? side = "left" : side = "right" %>
+  <div class="container-timeline <%= side %>">
+    <div class="content">
+      <a href="#" data-bs-toggle="modal" data-bs-target="#scrapbook-<%= scrapbook.id %>">
+        <div class="row justify-content">
+        <%= link_to family_scrapbook_path(scrapbook.family, scrapbook) do %>
+          <div class="col-sm-12 col-md-4">
+            <% if scrapbook.photo.attached? %>
+            <%=cl_image_tag scrapbook.photo.key, width: 120, class: "scrapbook-image"   %>
+            <% end %>
+          </div>
+          <div class="col-sm-12 col-md-8">
+          <div class="d-colm justify-content-between">
+            <h4><strong><%=scrapbook.scrapbook_title%></strong></h4>
+          </div>
+            <p><%=scrapbook.scrapbook_description.first(99)%>...</p>
+              <div class="d-flex justify-content-between">
+              <p class="text-muted"><strong>by:</strong><%=scrapbook.user.name%></p>
+              </div>
+          </div>
+        <% end %>
+        </div>
+      </a>
+    </div>
+  </div>
+  <%end %>
+</div>

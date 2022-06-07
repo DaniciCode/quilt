@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center">
+  <div class="container-new">
+    <h3 class="text-center">add a memory</h3>
+     <%= simple_form_for [@family, @scrapbook, @scrapbook_memory]  do |f| %>
+     <div class="form-inputs">
+        <%= f.input :memory, collection: @memories%>
+
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Submit" %>
+      </div>
+      <% end %>
+      <%= link_to "Back", memories_path %>
+</div>

@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :user_families
   has_many :families, through: :user_families
+  has_many :memories
 
   def name
     "#{first_name} #{last_name}"

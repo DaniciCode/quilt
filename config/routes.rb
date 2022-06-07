@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :families do
      resources :scrapbooks, only: [:show , :new, :create] do
        resources :memories
+       resources :scrapbook_memories, only: [:new, :create]
     end
   end
   get "my_families", to: 'families#my_families'

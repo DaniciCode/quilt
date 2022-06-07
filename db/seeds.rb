@@ -87,12 +87,12 @@ family6 = Family.create(family_name:"Manson Family" , description:"Stay away fro
 photo17 = URI.open('https://br.web.img3.acsta.net/r_1280_720/pictures/15/02/26/18/03/287837.jpg')
 family6.photo.attach(io: photo17, filename: 'file17.jpg', content_type: 'image/jpg')
 
+#family7 = Family.create(family_name:"Le Ouágon: batch #865", description:"Learn to code ")
 
 
 #User Families
 user1_family1 = UserFamily.create(user:user1, family:family1)
-user1_family2 = UserFamily.create(user:user1, family:family2)
-user2_family1 = UserFamily.create(user:user2, family:family1)
+user1_family2 = UserFamily.create(user:user2, family:family2)
 user3_family1 = UserFamily.create(user:user3, family:family1)
 user4_family1 = UserFamily.create(user:user4, family:family1)
 #user5_family1 = UserFamily.create(user:user5, family:family1)

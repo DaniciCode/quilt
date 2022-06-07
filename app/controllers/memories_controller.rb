@@ -4,6 +4,7 @@ class MemoriesController < ApplicationController
     #se memorias do proprio user
     @memories = Memory.where(user: current_user)
     @family = Family.new
+    @memory = Memory.new
   end
 
   def show
@@ -29,6 +30,14 @@ class MemoriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def create_only_memory
+    @memory = Memory.new(memory_params)
+    @memory.user = current_user
+      if @memory.save
+        redirect_to memories_path
+      end
   end
 
   def destroy

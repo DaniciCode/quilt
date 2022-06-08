@@ -1,5 +1,5 @@
 require 'open-uri'
-# require "byebug"
+#require "byebug"
 
 puts 'Destroy db of quiltmemory...'
 
@@ -29,6 +29,7 @@ User.destroy_all
 user1 = User.create(email: "anabandarra@gmail.com", password: "123456", first_name: "Ana", last_name: "Bandarra", age: Date.new(1984,12,15))
 user2 = User.create(email: "ripaulo@gmail.com", password: "123456", first_name: "Ricardo", last_name: "Paulo", age: Date.new(1984,12,15))
 user3 = User.create(email: "martanunes@gmail.com", password: "123456", first_name: "Marta", last_name: "Nunes", age: Date.new(1984,12,15))
+user20 = User.create(email: "borispaillard@gmail.com", password: "123456", first_name: "Boris", last_name: "Paillard", age: Date.new(1984,12,15))
 user4 = User.create(email: "miguelito@gmail.com", password: "123456", first_name: "Carson Miguelito", last_name: "de Alcantara", age: Date.new(1984,12,15))
 user5 = User.create(email: "carlossoto@gmail.com", password: "123456", first_name: "Carlos", last_name: "Soto", age: Date.new(1984,12,15))
 user6 = User.create(email: "nathalieroth@gmail.com", password: "123456", first_name: "Nathalie", last_name: "Roth", age: Date.new(1984,12,15))
@@ -40,13 +41,12 @@ user11 = User.create(email: "sayonarasilva@gmail.com", password: "123456", first
 user12 = User.create(email: "Larilui@gmail.com", password: "123456", first_name: "Larissa", last_name: "Hury", age: Date.new(1984,12,15))
 user13 = User.create(email: "joseappletton@gmail.com", password: "123456", first_name: "Jose", last_name: "Appleton", age: Date.new(1984,12,15))
 user14 = User.create(email: "guyganbaruch@gmail.com", password: "123456", first_name: "Guy", last_name: "Baruch", age: Date.new(1984,12,15))
-user15 = User.create(email: "sydneyjohnson@gmail.com", password: "123456", first_name: "Sydney", last_name: "Johnson", age: Date.new(1984,12,15))
+user15 = User.create(email: "sidneyjohnson@gmail.com", password: "123456", first_name: "Sidney", last_name: "Johnson", age: Date.new(1984,12,15))
 user15 = User.create(email: "rodrigonobrega@gmail.com", password: "123456", first_name: "Rodrigo", last_name: "Nobrega", age: Date.new(1984,12,15))
 user16 = User.create(email: "andrasnemeth@gmail.com", password: "123456", first_name: "Andras", last_name: "Nemeth", age: Date.new(1984,12,15))
 user17 = User.create(email: "dimosamouris@gmail.com", password: "123456", first_name: "Dimitris", last_name: "Samouris", age: Date.new(1984,12,15))
 user18 = User.create(email: "ricardogonzales@gmail.com", password: "123456", first_name: "Ricardo", last_name: "Gonzales", age: Date.new(1984,12,15))
 user19 = User.create(email: "lennartspee@gmail.com", password: "123456", first_name: "Lennart", last_name: "Spee", age: Date.new(1984,12,15))
-user20 = User.create(email: "borispaillard@gmail.com", password: "123456", first_name: "Boris", last_name: "Paillard", age: Date.new(1984,12,15))
 
 users_now = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15, user16, user17, user18, user19, user20]
 
@@ -74,7 +74,7 @@ end
 
 User.all.each_with_index do |user, index|
   next if index == 0
-  UserFamily.create(user: user, family: Family.first)
+  UserFamily.create(user: user, family: Family.first) if user.first_name != "Boris"
 
   puts "#{user.first_name} #{user.last_name} added to #{Family.first.family_name}."
 end
@@ -102,16 +102,16 @@ end
 #Scrapbook seeds
 
 scrap1 = Scrapbook.create(scrapbook_title: "Code", scrapbook_description: "Miguel, you said the worst were the first two weeks", user:user1, family:family1)
-photo4 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654688543/Quilt/memories%20lewagon/IMG_6122_tcrwul.jpg')
+photo4 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654701383/Quilt/memories%20lewagon/jpeg/IMG_6762_jj4jkj_b2elum.jpg')
 scrap1.photo.attach(io: photo4, filename: 'file4.jpg', content_type: 'image/jpg')
 
-scrap2 = Scrapbook.create(scrapbook_title: "Fun", scrapbook_description: "Life has to fun", user:user1, family:family1)
-photo5 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654688543/Quilt/memories%20lewagon/IMG_6122_tcrwul.jpg')
+scrap2 = Scrapbook.create(scrapbook_title: "Fun", scrapbook_description: "Coding is fun for some people", user:user1, family:family1)
+photo5 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654701383/Quilt/memories%20lewagon/jpeg/IMG_6691_s8y4tx_xwfkr2.jpg')
 scrap2.photo.attach(io: photo5, filename: 'file5.jpg', content_type: 'image/jpg')
 
 
 scrap3 = Scrapbook.create(scrapbook_title: "Beer'o'clock", scrapbook_description: "To forget about the code", user:user1, family:family1)
-photo6 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654688543/Quilt/memories%20lewagon/IMG_6122_tcrwul.jpg')
+photo6 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1654701387/Quilt/memories%20lewagon/jpeg/IMG_6981_dw78wf_wbpc0y.jpg')
 scrap3.photo.attach(io: photo6, filename: 'file6.jpg', content_type: 'image/jpg')
 
 scrap4 = Scrapbook.create(scrapbook_title: "Lunch and learn", scrapbook_description: "Have a slice of pizza and learn", user:user1, family:family1)
@@ -119,34 +119,34 @@ photo7 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_100
 scrap4.photo.attach(io: photo7, filename: 'file7.jpg', content_type: 'image/jpg')
 
 scrap5 = Scrapbook.create(scrapbook_title: "Trips to continente", scrapbook_description: "Sometimes I just need to get some fresh air", user:user1, family:family1)
-photo8 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654688543/Quilt/memories%20lewagon/IMG_6122_tcrwul.jpg')
+photo8 = URI.open('https://agriculturaemar.com/wp-content/uploads/2018/04/Continente-Bom-Dia-Duque-de-Loul%C3%A9-3.jpg')
 scrap5.photo.attach(io: photo8, filename: 'file8.jpg', content_type: 'image/jpg')
 
 #scrap6 = Scrapbook.create(scrapbook_title: "Demo day", scrapbook_description: "The future will certainly be bright after", user:user1, family:family1)
 
 #Memories Seeds
 #kim k
-memory1 = Memory.create!(title:"I wore Marilyn Monroe Dress", description:"I only eat nothing but tomatoes for 2 weeks. Damn you Marilyn you were skinny",date:Date.new(2022,3,22), location:"New York",user:user1)
+memory1 = Memory.create!(title:"The Code is right", description:"We hope our code was right, but sometimes coding is a b*tch. Yeah coding happens to good people. ",date:Date.new(2022,3,22), location:"Le Wagon, Lisboa",user:user1)
 memory1.photo.attach(
-  io: URI.open('https://conteudo.imguol.com.br/c/entretenimento/b5/2022/05/02/kim-kardashian--jean-louis-1651539650959_v2_450x600.jpg'),
+  io: URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654701386/Quilt/memories%20lewagon/jpeg/IMG_6689_yzbitn_s2i4lq.jpg'),
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)
   content_type: 'image/jpg' # use the mime type of the attached file here
   )
   memory1.save!
-memory2 = Memory.create(title:"Birth of North West", description:"The day I felt complete, I never knew I could be so happy",date:Date.new(2017,5,15), location:"California", user:user1)
-file2 = URI.open('https://stylecaster.com/wp-content/uploads/2013/08/bsxvzmzceaif3wx.jpeg?resize=768,879')
-memory2.photo.attach(io: file2, filename: 'file2.jpg', content_type: 'image/jpeg')
-memory3 = Memory.create(title:"Marriage to Kanye", description:"I really loved Kanye. I was so happy", date:Date.new(2016,7,22), location:"Kalabassas", user:user1)
-photo9 = URI.open('https://www.geo.tv/assets/uploads/updates/2021-08-27/367371_5495181_updates.jpg')
+memory2 = Memory.create(title:"The devilish smile", description:"Doing rails db:drop on Sy's laptop... Sorry Sy",date:Date.new(2022,06,01), location:"Le Wagon, Lisboa", user:user1)
+file2 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654706701/Quilt/memories%20lewagon/jpeg/220504_Le_Wagon_131-X3_sjllgq.jpg')
+memory2.photo.attach(io: file2, filename: 'file2.jpg', content_type: 'image/jpg')
+memory3 = Memory.create(title:"Ends", description:"Be careful with the ends kids. Even good things, like my code, have come to an end", date:Date.new(2022,04,22), location:"Le Wagon, Lisboa", user:user1)
+photo9 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654701384/Quilt/memories%20lewagon/jpeg/IMG_7008_dbqkoh_cvwibs.jpg')
 memory3.photo.attach(io: photo9, filename: 'photo9.jpg', content_type: 'image/jpg')
-memory4 = Memory.create(title:"My Perfume lauch", description:"The first step of the Kardashians' empire",date:Date.new(2006,6,16), location:"Los Angeles", user:user1)
-photo10 = URI.open('https://c8.alamy.com/comp/BTRKNB/kim-kardashian-fragrance-launch-BTRKNB.jpg')
+memory4 = Memory.create(title:"Le Div", description:"In front-end the divs are the new ends...",date:Date.new(2022,05,10), location:"Le Wagon, Lisboa", user:user1)
+photo10 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654701383/Quilt/memories%20lewagon/jpeg/IMG_6675_r23cpa_gxjybi.jpg')
 memory4.photo.attach(io: photo10, filename: 'photo10.jpg', content_type: 'image/jpg')
-memory5 = Memory.create(title:"The first episode", description:"The Kardashians are HERE.",date:Date.new(2002,12,12), location:"Calabassas", user:user1)
-photo11 = URI.open('https://pyxis.nymag.com/v1/imgs/0ca/3e5/ce5a9dd47416d04b9b666c273dcf8f2f14-18-keeping-up-with-the-kardashians-seaso.rsquare.w700.jpg')
+memory5 = Memory.create(title:"The Developer", description:"Now I have the look and the accessories(beer), but missing the code part.",date:Date.new(2022,06,07), location:"Le Wagon, Lisboa", user:user1)
+photo11 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654705849/Quilt/memories%20lewagon/jpeg/0c29b758-b4d9-41c0-b358-5fff4a39ab0a_ey07oh.jpg')
 memory5.photo.attach(io: photo11, filename: 'photo11.jpg', content_type: 'image/jpg')
-memory6 = Memory.create(title:"The first time I got drunk", description:"I'm never drinking again!!!",date:Date.new(2006,10,2), location:"Los Angeles", user:user1)
-photo12 = URI.open('https://i.pinimg.com/736x/66/67/84/666784121914e54f8a8824fb61673d78--drunk-in-love-paris-hilton.jpg')
+memory6 = Memory.create(title:"Hang in there Sayonara", description:"I feel your pain. My code is not working too.",date:Date.new(2022,05,30), location:"Le Wagon, Lisboa", user:user1)
+photo12 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654701384/Quilt/memories%20lewagon/jpeg/IMG_6672_pv07ja_dlalre.jpg')
 memory6.photo.attach(io: photo12, filename: 'photo12.jpg', content_type: 'image/jpg')
 
 

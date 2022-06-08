@@ -1,5 +1,3 @@
-
-
 .home{
   float: left;
   width: 25%;
@@ -22,20 +20,43 @@
   padding: 10px;
   border: 6px;
   text-align: center;
-  background-image: linear-gradient(to right, #b59ee4, #b2accc);
+  background-image: linear-gradient(to right, #e2dbed, #ffffff);
   transition: transform 250ms, opacity 400ms;
 }
 
 .home-card:hover {
   transform: scale(1.2);
-
 }
 
-.parahome{
-  margin-top: 20%;
-  font-size: 13px;
-  color: rgb(227, 220, 229);
+.parawrite{
+  margin-top: 8%;
+  font-size: 18px;
+  color:#492867;
+  font-family: 'Libre Franklin', sans-serif;
 }
+
+.parasave{
+  margin-top: 8%;
+  font-size: 18px;
+  color:#64bcbe;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.parashare{
+  margin-top: 8%;
+  font-size: 18px;
+  color:#e26b85;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.pararevisit{
+  margin-top: 8%;
+  font-size: 18px;
+  color:#218cb3;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+
 
 .container-about{
   background-color: #F7F6FC ;

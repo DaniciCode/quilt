@@ -1,12 +1,13 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  height: 650px;
+  padding: 250px 0;
+  height: 750px;
 }
 
 .text-banner{
-  padding-top: 95px;
+  padding-top: -5px;
+  max-width: 520px;
 
 }
 
@@ -16,6 +17,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 27px;
 }
 
 .banner .text-banner p {
@@ -23,4 +25,6 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  line-height: 30px;
 }

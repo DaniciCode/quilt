@@ -1,11 +1,6 @@
 <h2> <%= @family.family_name %> Scrapbooks</h2>
 <%= render "shared/timeline_scrapbooks", scrapbooks: @scrapbooks %>
 
-
-
-
-
-
 <div class="d-flex justify-content-center">
   <div class="container-new">
     <h3 class="text-center">Family details </h3>
@@ -47,4 +42,29 @@
 <%#= link_to scrapbook.scrapbook_title, family_scrapbook_path(@family, scrapbook)  %>
 <%#end %>
 
-<%= link_to "Create new Scrapbook", new_family_scrapbook_path(@family) %>
+
+
+
+<div class="btn-index-geral">
+  <div class="sm-sl">
+          <i class="fas fa-info btn-index"></i>
+    </div>
+
+  <div class="dropdown ">
+    <a class="dropbtn"><i class="fas fa-user btn-index"></i></a>
+    <div class="dropdown-content">
+      <a href="#">My Memories</a>
+    </div>
+  </div>
+
+    <div class="sm-sl">
+          <i class="fas fa-search btn-index"></i>
+    </div>
+
+    <div class="dropdown">
+      <a class="dropbtn"><i class="fas fa-plus btn-index"></i></a>
+      <div class="dropdown-content caixa">
+        <%= link_to "Create new Scrapbook", new_family_scrapbook_path(@family) %>
+
+      </div>
+</div>

@@ -1,3 +1,5 @@
+<h2><%= @scrapbook.scrapbook_title %></h2>
+
 <% unless @memories.empty? %>
   <%= render 'shared/timeline_memories', memories: @memories  %>
 <% end %>

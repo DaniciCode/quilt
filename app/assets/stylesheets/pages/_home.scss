@@ -20,11 +20,21 @@
 .home-card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 10px;
+  border: 6px;
   text-align: center;
+  background-image: linear-gradient(to right, #b59ee4, #b2accc);
+  transition: transform 250ms, opacity 400ms;
+}
+
+.home-card:hover {
+  transform: scale(1.2);
+
 }
 
 .parahome{
   margin-top: 20%;
+  font-size: 13px;
+  color: rgb(227, 220, 229);
 }
 
 .container-about{
@@ -34,6 +44,11 @@
 
 .icons-home{
   color: #7353B7;
-  font-size: 35px;
+  font-size: 45px;
   margin-top: 55px;
+  text-shadow: 1px 1px 3px #F7F6FC;
+}
+
+.about{
+  padding: 30px;
 }

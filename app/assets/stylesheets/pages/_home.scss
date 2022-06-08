@@ -70,6 +70,32 @@
   text-shadow: 1px 1px 3px #F7F6FC;
 }
 
-.about{
-  padding: 30px;
+.about-img{
+  background-size: cover;
+  background-position: center;
+  padding: 290px 0;
+  height: 250px;
+}
+
+.text-about{
+  padding-top: -25px;
+  max-width: 520px;
+}
+
+.about-img .text-about h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 27px;
+}
+
+.about-img .text-about p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  line-height: 30px;
 }

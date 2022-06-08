@@ -24,6 +24,16 @@
   </div>
 </div>
 
+<div class="dropdown ">
+  <a class="dropbtn"><i class="fas fa-book-open btn-index"></i></a>
+    <div class="dropdown-content">
+      <ul>
+       <%current_user.families.each do |family| %>
+         <li><%= link_to family_path(@family) %></li>
+        <%end%>
+      </ul>
+    </div>
+</div>
 
-<%= link_to "Family scrapbook", family_path(@family) %>
+
 </div>

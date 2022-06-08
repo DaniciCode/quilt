@@ -10,6 +10,21 @@ UserFamily.destroy_all
 Family.destroy_all
 User.destroy_all
 
+# users = [
+#   { email: "anabandarra@gmail.com", first_name: "Ana", last_name: "Bandarra" },
+#   { email: "ripaulo@gmail.com", first_name: "Ricardo", last_name: "Paulo" }
+# ]
+
+# users.each do |user|
+#   User.create(
+#     email: user[:email],
+#     password: "123456",
+#     first_name: user[:first_name],
+#     last_name: user[:last_name],
+#     age: Date.new(1984,12,15)
+#   )
+# end
+
 #Demoday
 user1 = User.create(email: "anabandarra@gmail.com", password: "123456", first_name: "Ana", last_name: "Bandarra", age: Date.new(1984,12,15))
 user2 = User.create(email: "ripaulo@gmail.com", password: "123456", first_name: "Ricardo", last_name: "Paulo", age: Date.new(1984,12,15))
@@ -33,7 +48,6 @@ user18 = User.create(email: "ricardogonzales@gmail.com", password: "123456", fir
 user19 = User.create(email: "lennartspee@gmail.com", password: "123456", first_name: "Lennart", last_name: "Spee", age: Date.new(1984,12,15))
 user20 = User.create(email: "borispaillard@gmail.com", password: "123456", first_name: "Boris", last_name: "Paillard", age: Date.new(1984,12,15))
 
-
 users_now = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15, user16, user17, user18, user19, user20]
 
 puts "Created #{users_now.count} new users"
@@ -49,24 +63,39 @@ family3 = Family.create(family_name:"Bandarra-Baptista Rock'n'Roll" , descriptio
 photo3 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654695591/Quilt/memories%20lewagon/IMG_9346_fncmng.jpg')
 family3.photo.attach(io: photo3, filename: 'file3.jpg', content_type: 'image/jpg')
 
+families = Family.all
+
+Family.first(3).each do |family|
+  UserFamily.create(user: User.first, family: family)
+
+  puts "#{User.first.first_name} #{User.first.last_name} added to #{family.family_name}."
+end
+
+
+User.all.each_with_index do |user, index|
+  next if index == 0
+  UserFamily.create(user: user, family: Family.first)
+
+  puts "#{user.first_name} #{user.last_name} added to #{Family.first.family_name}."
+end
+
 #User Families
-user1_family1 = UserFamily.create(user:user1, family:family1)
-user1_family2 = UserFamily.create(user:user2, family:family2)
-user3_family1 = UserFamily.create(user:user3, family:family1)
-user4_family1 = UserFamily.create(user:user4, family:family1)
-user5_family1 = UserFamily.create(user:user5, family:family1)
-user6_family1 = UserFamily.create(user:user6, family:family1)
-user7_family1 = UserFamily.create(user:user7, family:family1)
-user8_family1 = UserFamily.create(user:user8, family:family1)
-user9_family1 = UserFamily.create(user:user9, family:family1)
-user10_family1 = UserFamily.create(user:user10, family:family1)
-user11_family1 = UserFamily.create(user:user11, family:family1)
-user12_family1 = UserFamily.create(user:user12, family:family1)
-user13_family1 = UserFamily.create(user:user13, family:family1)
-user14_family1 = UserFamily.create(user:user14, family:family1)
-user15_family1 = UserFamily.create(user:user15, family:family1)
-user16_family1 = UserFamily.create(user:user16, family:family1)
-user17_family1 = UserFamily.create(user:user17, family:family1)
+# user2_family1 = UserFamily.create(user:user2, family:family1)
+# user3_family1 = UserFamily.create(user:user3, family:family1)
+# user4_family1 = UserFamily.create(user:user4, family:family1)
+# user5_family1 = UserFamily.create(user:user5, family:family1)
+# user6_family1 = UserFamily.create(user:user6, family:family1)
+# user7_family1 = UserFamily.create(user:user7, family:family1)
+# user8_family1 = UserFamily.create(user:user8, family:family1)
+# user9_family1 = UserFamily.create(user:user9, family:family1)
+# user10_family1 = UserFamily.create(user:user10, family:family1)
+# user11_family1 = UserFamily.create(user:user11, family:family1)
+# user12_family1 = UserFamily.create(user:user12, family:family1)
+# user13_family1 = UserFamily.create(user:user13, family:family1)
+# user14_family1 = UserFamily.create(user:user14, family:family1)
+# user15_family1 = UserFamily.create(user:user15, family:family1)
+# user16_family1 = UserFamily.create(user:user16, family:family1)
+# user17_family1 = UserFamily.create(user:user17, family:family1)
 
 #scrapbooks
 

@@ -1,17 +1,18 @@
-<div class="timeline mt-5">
+<div class="timeline mt-5 position-relative">
+<h3 class="d-flex justify-content-start position-absolute title-crapbook"><%= @family.family_name %></h3>
   <% scrapbooks.each do |scrapbook| %>
   <% classes = scrapbook.id.even? ? 'justify-content-end left' : 'right' %>
   <div class="container-timeline d-flex <%= classes %>">
     <div class="card" style="width: 18rem;">
       <a href="#" data-bs-toggle="modal" data-bs-target="#scrapbook-<%= scrapbook.id %>">
-        <div class="card-body">
+        <div class="card-body card-back-color">
           <%= link_to family_scrapbook_path(scrapbook.family, scrapbook) do %>
             <div class="card-img-top">
               <% if scrapbook.photo.attached? %>
-                <%= cl_image_tag scrapbook.photo.key, width: 120, class: "scrapbook-image"   %>
+                <%= cl_image_tag scrapbook.photo.key, width: 350, height: 350, gravity: 'faces', crop: 'fill', class: "img-fluid rounded-start memory-image" %>
               <% end %>
             </div>
-              <h4><strong><%=scrapbook.scrapbook_title%></strong></h4>
+              <h4 class="mt-1"><strong><%=scrapbook.scrapbook_title%></strong></h4>
               <p><%=scrapbook.scrapbook_description.first(99)%>...</p>
               <p class="text-muted"><strong>by </strong> <%=scrapbook.user.name%></p>
           <% end %>

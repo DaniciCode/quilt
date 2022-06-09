@@ -1,16 +1,15 @@
 <div class="mt-5">
-<%= render "shared/timeline_scrapbooks", scrapbooks: @scrapbooks %>
+  <%= render "shared/timeline_scrapbooks", scrapbooks: @scrapbooks %>
 </div>
 
 <div class="btn-index-geral">
   <div class="sm-sl">
-
-<a type="button" data-bs-toggle="modal" data-bs-target="#familyDetails">
+    <a type="button" data-bs-toggle="modal" data-bs-target="#familyDetails">
       <i class="fas fa-info btn-index"></i>
     </a>
   </div>
 
-  <div class="dropdown ">
+  <div class="dropdown">
     <a class="dropbtn"><i class="fas fa-user btn-index"></i></a>
     <div class="dropdown-content">
      <%= link_to "My Memories", memories_path %>
@@ -18,16 +17,16 @@
   </div>
 
   <div class="sm-sl">
-        <i class="fas fa-search btn-index"></i>
+    <i class="fas fa-search btn-index"></i>
   </div>
-    <div class="dropdown">
-      <a class="dropbtn"><i class="fas fa-plus btn-index"></i></a>
-      <div class="dropdown-content caixa">
-        <a type="button" data-bs-toggle="modal" data-bs-target="#modalScrap">
-         Create new Scrapbook
-       </a>
-      </div>
+  <div class="dropdown">
+    <a class="dropbtn"><i class="fas fa-plus btn-index"></i></a>
+    <div class="dropdown-content caixa">
+      <a type="button" data-bs-toggle="modal" data-bs-target="#modalScrap">
+        Create new Scrapbook
+      </a>
     </div>
+  </div>
 </div>
 
 <!-- Modal -->

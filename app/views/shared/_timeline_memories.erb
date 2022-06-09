@@ -3,7 +3,7 @@
     <%= render "memories/modal", memory: memory %>
     <% memory.id.even? ? side = "left" : side = "right" %>
     <div class="container-timeline <%= side %>">
-      <div class="card mb-3 mt-5 " style="max-width: 540px;">
+      <div class="card mb-3 mt-5 back-memory" style="max-width: 540px;">
         <a href="#" data-bs-toggle="modal" data-bs-target="#memory-<%= memory.id %>">
           <div class="row g-0 m-0">
             <div div class="col-md-4 img-fluid rounded-start">
@@ -11,7 +11,7 @@
                 <%= cl_image_tag memory.photo.key, width: 350, height: 350, gravity: 'faces', crop: 'fill', class: "img-fluid rounded-start memory-image"%>
               <% end %>
             </div>
-            <div class="col-md-8 card-back-color d-flex">
+            <div class="col-md-8 d-flex">
               <div class="card-body d-flex flex-column flex-grow-1">
                 <p class="text-muted d-flex justify-content-start"><%=memory.date.strftime('%m/%d/%Y')%></p>
                 <h4 class="card-title"><strong><%=memory.title%></strong></h4>

@@ -12,7 +12,7 @@
   content: '';
   position: absolute;
   width: 6px;
-  background-color: #eae6ff;
+  background-color: #7353b78f;
   top: 0;
   bottom: 0;
   left: 50%;
@@ -35,7 +35,7 @@
   height: 25px;
   right: -13px;
   background-color: #eae6ff;
-  border: 4px solid #F7F6FC;
+  border: 4px solid #7353b78f;
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -111,14 +111,22 @@
   height: 100%;
 }
 .card-back-color {
-  background-color: #eae6ff;
+  background-color:#eae6ff;
+  border-radius: 6px;
+  box-shadow: #7353b7 5px 5px, #7353b76e 10px 10px, #7353b74d 15px 15px, #7353b787 20px 20px, #7353b759 25px 25px;
+  border: solid 2px #7353b7;
 }
 .card-border {
-  border-radius: 4px;
+  border-radius: 6px;
 }
+card
 .title-crapbook {
   opacity: 0.6;
   top: 30px;
+}
+.back-memory {
+ border: solid 2px #7353b7;
+ box-shadow: #7353b7c9 26px 27px 20px -20px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */

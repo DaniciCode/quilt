@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   def index
     #@memories = Memory.all
     #se memorias do proprio user
-    @memories = Memory.where(user: current_user)
+    @memories = Memory.where(user: current_user).sort_by { |memory| memory.date }
     @family = Family.new
     @memory = Memory.new
   end

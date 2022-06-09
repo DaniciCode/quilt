@@ -1,7 +1,9 @@
 <div class="timeline mt-5">
+<% counter = 0  %>
   <%memories.each do |memory| %>
+    <% counter += 1 %>
     <%= render "memories/modal", memory: memory %>
-    <% memory.id.even? ? side = "left" : side = "right" %>
+    <% counter.even? ? side = "left" : side = "right" %>
     <div class="container-timeline <%= side %>">
       <div class="card mb-3 mt-5 back-memory" style="max-width: 540px;">
         <a href="#" data-bs-toggle="modal" data-bs-target="#memory-<%= memory.id %>">

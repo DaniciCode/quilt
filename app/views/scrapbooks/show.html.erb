@@ -17,10 +17,9 @@
 <div class="dropdown">
   <button class="dropbtn"><i class="fas fa-plus btn-index"></i></button>
   <div class="dropdown-content">
-
-       <button type="button" data-bs-toggle="modal" data-bs-target="#addNewMemoryModal">
+     <a type="button" data-bs-toggle="modal" data-bs-target="#addNewMemoryModal">
         Add a new memory to scrapbook
-       </button>
+       </a>
 
 
     <%= link_to "Add an existing memory to this scrapbook", new_family_scrapbook_scrapbook_memory_path(@family, @scrapbook, @memory)%>

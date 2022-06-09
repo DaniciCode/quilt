@@ -15,10 +15,13 @@ class FamiliesController < ApplicationController
 
 
   def show
+    @scrapbook = Scrapbook.new
     @family_members = @family.users
     @scrapbooks = @family.scrapbooks
     #@user_family = UserFamily.new
     @user_family = UserFamily.find_by(family: @family, user: current_user)
+    @scrapbook = Scrapbook.new
+
   end
 
   def new

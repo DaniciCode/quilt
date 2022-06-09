@@ -22,6 +22,8 @@
   text-align: center;
   background-image: linear-gradient(to right, #e2dbed, #ffffff);
   transition: transform 250ms, opacity 400ms;
+  background-size: cover;
+  background-position: center;
 }
 
 .home-card:hover {

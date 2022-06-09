@@ -3,41 +3,14 @@
 
 <%= render "shared/timeline_scrapbooks", scrapbooks: @scrapbooks %>
 
-<div class="d-flex justify-content-center">
-  <div class="container-new">
-    <h3 class="text-center">Family details </h3>
-      <h4><%=@family.family_name%></h4>
-      <h5><%=@family.description%></h5>
-      <% if @family.photo.attached? %>
-        <%=cl_image_tag @family.photo.key, width: 300  %>
-      <% end %>
-      <h5>Family created by: <%=@family.user.name %></h5>
-      <p>Family members:</p>
-<div>
-      <ul>
-        <% @family_members.each do |member| %>
-          <li><%= member.name %></li>
-        <% end %>
-      </ul>
-</div>
-
-
-
-
-   </div>
-</div>
-<%# @scrapbooks.each do |scrapbook| %>
-<%#= link_to scrapbook.scrapbook_title, family_scrapbook_path(@family, scrapbook)  %>
-<%#end %>
-
 
 
 
 <div class="btn-index-geral">
   <div class="sm-sl">
-    <a type="button" data-bs-toggle="modal" data-bs-target="#FamilyDetailModal">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#familyDetails">
       <i class="fas fa-info btn-index"></i>
-    </a>
+    </button>
   </div>
 
   <div class="dropdown ">
@@ -47,10 +20,9 @@
     </div>
   </div>
 
-    <div class="sm-sl">
-          <i class="fas fa-search btn-index"></i>
-    </div>
-
+  <div class="sm-sl">
+        <i class="fas fa-search btn-index"></i>
+  </div>
     <div class="dropdown">
       <a class="dropbtn"><i class="fas fa-plus btn-index"></i></a>
       <div class="dropdown-content caixa">
@@ -58,56 +30,55 @@
         <%= link_to "Create new Scrapbook", new_family_scrapbook_path(@family) %>
          </a>
       </div>
+    </div>
 </div>
 
-<%# modal family details %>
-
-<div class="modal fade " id="FamilyDetailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="familyDetails" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-       <% if @family.user == current_user %>
-        <%= link_to "Update family details", edit_family_path(@family) %>
-      <%end  %>
-      <%# <% unless @family.users.find(current_user.id) %>
-        <%# <%= simple_form_for [@family, @user_family ] do |f| %>
-        <%# <%= f.submit "Add a new member" %>
-        <%# <% end %>
-      <% unless @family.user == current_user || @family.users.include?(current_user) %>
-        <%= link_to "Join this family", user_families_path(family_id: @family.id), method: :post %>
-      <% else %>
-        <%= link_to "Leave this family", user_family_path(@user_family), method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <% if @family.users.count == 1 || @family.users.include?(current_user) %>
-        <%= link_to "Delete this family", @family, method: :delete, data: {confirm: 'Are you sure?'} %>
-      <%end %>
-     </div>
+        <div class="d-flex justify-content-center">
+          <div class="container-new">
+              <h3 class="text-center">Family details </h3>
+              <h4><%=@family.family_name%></h4>
+              <h5><%=@family.description%></h5>
+              <% if @family.photo.attached? %>
+                <%=cl_image_tag @family.photo.key, width: 300  %>
+              <% end %>
+              <h5>Family created by: <%=@family.user.name %></h5>
+              <p>Family members:</p>
+              <div>
+                  <ul>
+                    <% @family_members.each do |member| %>
+                      <li><%= member.name %></li>
+                    <% end %>
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
     </div>
   </div>
 </div>
 
-<%# modal create scrapbook %>
 
-<div class="modal fade " id="FamilyDetailModal" tabindex="-1" aria-labelledby="CreateScrapbookModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-              <div class="d-flex justify-content-center">
-                  <div class="container-new">
-                    <h3 class="text-center">Add a new scrapbook</h3>
-                    ....
-                  <%= link_to "Back", my_families_path %>
-               </div>
-       </div>
-      </div>
-    </div>
-  </div>
-</div>
+<% if @family.user == current_user %>
+  <%= link_to "Update family details", edit_family_path(@family) %>
+<%end  %>
+<% unless @family.user == current_user || @family.users.include?(current_user) %>
+  <%= link_to "Join this family", user_families_path(family_id: @family.id), method: :post %>
+<% else %>
+  <%= link_to "Leave this family", user_family_path(@user_family), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<% if @family.users.count == 1 || @family.users.include?(current_user) %>
+  <%= link_to "Delete this family", @family, method: :delete, data: {confirm: 'Are you sure?'} %>
+<%end %>

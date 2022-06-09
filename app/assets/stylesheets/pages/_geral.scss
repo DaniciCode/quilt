@@ -77,6 +77,25 @@ a:hover{
   text-decoration: none;
 }
 
+.btnstart{
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  background-color: #7353B7;
+  padding: 6px 60px;
+  border-radius: 24px;
+  font-weight: lighter;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: 3px;
+  border: 2px solid #7353B7;
+}
+.btnstart:hover{
+  color: #7353B7;
+  background-color: #FFFFFF;
+  text-decoration: none;
+  border: 2px solid #7353B7;
+}
+
 .btngeral{
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;

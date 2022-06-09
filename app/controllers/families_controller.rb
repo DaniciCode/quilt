@@ -9,6 +9,8 @@ class FamiliesController < ApplicationController
     @families = UserFamily.where(user: current_user).map do |user_family|
       user_family.family
     end
+    @user_family = UserFamily.new
+    @users = User.all
   end
 
 

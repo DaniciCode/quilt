@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-5">
   <h2 class="family">My Families</h2>
     <div class="row rounded">
       <% @families.each do |family| %>
@@ -13,7 +13,6 @@
                   <h4 class="card-title"><%=family.family_name%></h4>
                   <p class="card-text "><%=family.description.first(30)%>...</p>
                   <div class="mt-2 d-flex justify-content-center">
-
                   <a class="btngeral" type="button" data-bs-toggle="modal" data-bs-target="#modalNewFamily">
                    Add New
                   </a>

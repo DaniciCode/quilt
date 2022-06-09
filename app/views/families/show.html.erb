@@ -34,12 +34,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="d-flex justify-content-center">
-          <div class="container-new">
+        <div class="justify-content-center">
+
               <h3 class="text-center">Family details </h3>
               <h4><%=@family.family_name%></h4>
               <h5><%=@family.description%></h5>
@@ -55,18 +54,9 @@
                     <% end %>
                   </ul>
               </div>
-              <% if @family.user == current_user %>
+
           </div>
-                <%= link_to "Update family details", edit_family_path(@family) %>
-              <%end  %>
-              <% unless @family.user == current_user || @family.users.include?(current_user) %>
-                <%= link_to "Join this family", user_families_path(family_id: @family.id), method: :post %>
-              <% else %>
-                <%= link_to "Leave this family", user_family_path(@user_family), method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-              <% if @family.users.count == 1 || @family.users.include?(current_user) %>
-                <%= link_to "Delete this family", @family, method: :delete, data: {confirm: 'Are you sure?'} %>
-              <%end %>
+
         </div>
       </div>
     </div>
@@ -79,16 +69,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-           <div class="d-flex justify-content-center">
-            <div class="container-new">
-              <h3 class="text-center">Add a memory</h3>
-              ....sds
-               <div class="d-flex justify-content-center">
-                <div class="container-new">
+           <div class="justify-content-center">
+
                   <h3 class="text-center">Add a new scrapbook</h3>
                   <%= simple_form_for [@scrapbook],url: family_scrapbooks_path(@family) do |f| %>
                   <div class="form-inputs">
@@ -100,15 +85,11 @@
                       <%= f.button :submit, "Build a new scrapbook" %>
                     </div>
                     <% end %>
-                    <%= link_to "Back", my_families_path %>
-                </div>
-              </div>
-
-            <%= link_to "Back", memories_path %>
-      </div>
 
       </div>
-
     </div>
+  </div>
+</div>
+ </div>
   </div>
 </div>

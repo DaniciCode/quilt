@@ -17,7 +17,12 @@
 <div class="dropdown">
   <button class="dropbtn"><i class="fas fa-plus btn-index"></i></button>
   <div class="dropdown-content">
-    <%= link_to "Add a new memory to scrapbook", new_family_scrapbook_memory_path(@family, @scrapbook, @memory) %>
+
+       <button type="button" data-bs-toggle="modal" data-bs-target="#addNewMemoryModal">
+        Add a new memory to scrapbook
+       </button>
+
+
     <%= link_to "Add an existing memory to this scrapbook", new_family_scrapbook_scrapbook_memory_path(@family, @scrapbook, @memory)%>
   </div>
 </div>
@@ -34,4 +39,33 @@
 </div>
 
 
+</div>
+
+
+<!-- Modal add a new memory -->
+<div class="modal fade" id="addNewMemoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+       <div class=" justify-content-center">
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h3 class="text-center">Create a memory</h3>
+          <%= simple_form_for [@family, @scrapbook, @memory]  do |f| %>
+          <div class="form-inputs">
+              <%= f.input :title %>
+              <%= f.input :date %>
+              <%= f.input :location %>
+              <%= f.input :description %>
+              <%= f.input :photo, as: :file  %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Submit" %>
+            </div>
+            <% end %>
+
+        </div>
+        </div>
+
+    </div>
+  </div>
 </div>

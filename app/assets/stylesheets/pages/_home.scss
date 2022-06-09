@@ -10,6 +10,7 @@ c
   clear: both;
 }
 
+
 .home-card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 6px;
@@ -18,101 +19,15 @@ c
   text-align: center;
   background-image: linear-gradient(to right, #e2dbed, #ffffff);
   transition: transform 250ms, opacity 400ms;
-
 }
 
 .home-card:hover {
   transform: scale(1.2);
 }
 
-.parawrite{
+.parahome{
   margin-top: 8%;
   font-size: 18px;
   color:#492867;
   font-family: 'Libre Franklin', sans-serif;
-}
-
-.parasave{
-  margin-top: 8%;
-  font-size: 18px;
-  color:#492867;
-  font-family: 'Libre Franklin', sans-serif;
-}
-
-.parashare{
-  margin-top: 8%;
-  font-size: 18px;
-  color:#492867;
-  font-family: 'Libre Franklin', sans-serif;
-}
-
-.pararevisit{
-  margin-top: 8%;
-  font-size: 18px;
-  color:#492867;
-  font-family: 'Libre Franklin', sans-serif;
-}
-
-
-
-.container-about{
-  background-color: #F7F6FC ;
-  margin-top: 5%;
-}
-
-.icons-home{
-  color: #7353B7;
-  font-size: 45px;
-  margin-top: 55px;
-  text-shadow: 1px 1px 3px #F7F6FC;
-}
-
-.about-img{
-  background-size: cover;
-  background-position: center;
-  padding: 290px 0;
-  height: 250px;
-}
-
-.text-about{
-  padding-top: -25px;
-  max-width: 520px;
-}
-
-.about-img .text-about h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 27px;
-}
-
-.about-img .text-about p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  margin-bottom: 30px;
-  line-height: 30px;
-}
-
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 380px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-
-.size-home-img {
-  height: 300px;
 }

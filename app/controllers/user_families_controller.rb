@@ -3,7 +3,7 @@ class UserFamiliesController < ApplicationController
     @family = Family.find(params[:family_id])
     @user = current_user
     @user_family = UserFamily.new
-    @users = User.all
+    @users = User.all.sort_by {|user| user.first_name}
   end
 
   def create

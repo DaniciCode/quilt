@@ -4,15 +4,16 @@
 
 <div class="btn-index-geral">
   <div class="sm-sl">
-    <button type="button"  data-bs-toggle="modal" data-bs-target="#familyDetails">
+
+<a type="button" data-bs-toggle="modal" data-bs-target="#familyDetails">
       <i class="fas fa-info btn-index"></i>
-    </button>
+    </a>
   </div>
 
   <div class="dropdown ">
     <a class="dropbtn"><i class="fas fa-user btn-index"></i></a>
     <div class="dropdown-content">
-      <%= link_to "My Memories", memories_path %>
+     <%= link_to "My Memories", memories_path %>
     </div>
   </div>
 
@@ -22,9 +23,9 @@
     <div class="dropdown">
       <a class="dropbtn"><i class="fas fa-plus btn-index"></i></a>
       <div class="dropdown-content caixa">
-      <button type="button" data-bs-toggle="modal" data-bs-target="#modalScrap">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#modalScrap">
          Create new Scrapbook
-       </button>
+       </a>
       </div>
     </div>
 </div>

@@ -28,8 +28,8 @@
   <a class="dropbtn"><i class="fas fa-book-open btn-index"></i></a>
     <div class="dropdown-content">
       <ul>
-       <%current_user.families.each do |family| %>
-         <li><%= link_to family_path(@family) %></li>
+       <%@family.scrapbooks.each do |scrapbook| %>
+         <li><%= link_to scrapbook.scrapbook_title, family_scrapbook_path(@family, @scrapbook) %></li>
         <%end%>
       </ul>
     </div>

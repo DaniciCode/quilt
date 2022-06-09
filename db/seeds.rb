@@ -126,7 +126,7 @@ scrap5.photo.attach(io: photo8, filename: 'file8.jpg', content_type: 'image/jpg'
 
 #Memories Seeds
 #kim k
-memory1 = Memory.create!(title:"The Code is right", description:"We hope our code was right, but sometimes coding is a b*tch. Yeah coding happens to good people. ",date:Date.new(2022,3,22), location:"Le Wagon, Lisboa",user:user1)
+memory1 = Memory.create!(title:"The Code is right", description:"We hope our code was right, but sometimes coding is a b*tch. Yeah coding happens to good people. ",date:Date.new(2022,5,20), location:"Le Wagon, Lisboa",user:user1)
 memory1.photo.attach(
   io: URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654701386/Quilt/memories%20lewagon/jpeg/IMG_6689_yzbitn_s2i4lq.jpg'),
   filename: 'anyname.jpg', # use the extension of the attached file here (found at the end of the url)

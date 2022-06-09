@@ -10,7 +10,7 @@ class FamiliesController < ApplicationController
       user_family.family
     end
     @user_family = UserFamily.new
-    @users = User.all
+    @users = User.all.sort_by {|user| user.first_name}
   end
 
 

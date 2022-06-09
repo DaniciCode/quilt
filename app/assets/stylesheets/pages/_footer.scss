@@ -10,6 +10,9 @@
   width: 100%;
   bottom: 0;
   line-height: 60px;
+  position: fixed;
+  border: 1px solid #461C7A;
+  z-index: 2;
 }
 .footer-links {
   display: flex;

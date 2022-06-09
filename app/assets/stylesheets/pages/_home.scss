@@ -3,7 +3,7 @@
 .row {
   margin: 0 -5px;
 }
-
+c
 .row:after {
   content: "";
   display: table;
@@ -12,28 +12,14 @@
 
 .home-card{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 10px;
+  padding: 6px;
   border: 6px;
+  border-radius: 6px;
   text-align: center;
   background-image: linear-gradient(to right, #e2dbed, #ffffff);
   transition: transform 250ms, opacity 400ms;
-  height: 470px;
-}
 
-.home-card-img-1 {
-  background-image: url("https://res.cloudinary.com/monstergrannies/image/upload/w_100,ar_1:1,c_fill,g_auto,e_sharpen/v1654770350/Quilt/fotoshomepagenovas/write_kfc53l.svg");
 }
-
-.home-card-img-2 {
-  background-image: url("https://res.cloudinary.com/monstergrannies/image/upload/w_100,ar_1:1,c_fill,g_auto,e_sharpen/v1654770342/Quilt/fotoshomepagenovas/save_rwuif0.svg");
-}
-.home-card-img-3 {
-  background-image: url("https://res.cloudinary.com/monstergrannies/image/upload/w_100,ar_1:1,c_fill,g_auto,e_sharpen/v1654770327/Quilt/fotoshomepagenovas/share_pdueuc.svg");
-}
-.home-card-img-4 {
-  background-image: url("https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654770333/Quilt/fotoshomepagenovas/revisit_e4mkv7.svg");
-}
-
 
 .home-card:hover {
   transform: scale(1.2);
@@ -49,21 +35,21 @@
 .parasave{
   margin-top: 8%;
   font-size: 18px;
-  color:#64bcbe;
+  color:#492867;
   font-family: 'Libre Franklin', sans-serif;
 }
 
 .parashare{
   margin-top: 8%;
   font-size: 18px;
-  color:#e26b85;
+  color:#492867;
   font-family: 'Libre Franklin', sans-serif;
 }
 
 .pararevisit{
   margin-top: 8%;
   font-size: 18px;
-  color:#218cb3;
+  color:#492867;
   font-family: 'Libre Franklin', sans-serif;
 }
 

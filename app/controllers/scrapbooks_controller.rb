@@ -2,7 +2,7 @@ class ScrapbooksController < ApplicationController
   before_action :set_scrapbook, only: :show
 
   def show
-    @memories = @scrapbook.memories
+    @memories = @scrapbook.memories.sort_by { |memory| memory.date }
     @family = @scrapbook.family
     @memory = Memory.new
   end

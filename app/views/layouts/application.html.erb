@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quilt</title>
+    <title>Quilt, turning your memories into life. Revisit your memories whenever your want</title>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="/assets/logometa.png"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('/assets/logometa.png') %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <title><%= meta_title %></title>
+    <meta name="description" content="Turning memories into life">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="Quilt" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.quiltmemory.com" />
+    <meta property="og:image" content="https://res.cloudinary.com/monstergrannies/image/upload/v1654851555/Quilt/Prancheta_1_oqctrr.png" />
+    <meta property="og:description" content="Turning memories into life" />
+    <meta property="og:site_name" content="Quilt" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="https://res.cloudinary.com/monstergrannies/image/upload/v1654851555/Quilt/Prancheta_1_oqctrr.png">
+
+    <meta property="og:image" content="https://res.cloudinary.com/monstergrannies/image/upload/v1654851555/Quilt/Prancheta_1_oqctrr.png" />
   </head>
 
   <body>

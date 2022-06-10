@@ -53,7 +53,7 @@ users_now = [user1, user2, user3, user4, user5, user6, user7, user8, user9, user
 puts "Created #{users_now.count} new users"
 
 #Families Seeds
-family1 = Family.create(family_name:"Le Ouágon: batch #865", description:"The best batch ever to go to Le Wagon. Learning Web development with passion and joy!", user:user1)
+family1 = Family.create(family_name:"Le Wagon: batch #865", description:"The best batch ever to go to Le Wagon. Learning Web development with passion and joy!", user:user1)
 photo1 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1654688543/Quilt/memories%20lewagon/IMG_6122_tcrwul.jpg')
 family1.photo.attach(io: photo1, filename: 'file1.jpg', content_type: 'image/jpg')
 family2 = Family.create(family_name:"Brutalescoides" , description:"Family originally from Viseu. Trying to take the world by storm", user:user1)
@@ -148,6 +148,9 @@ memory5.photo.attach(io: photo11, filename: 'photo11.jpg', content_type: 'image/
 memory6 = Memory.create(title:"Hang in there Sayonara", description:"I feel your pain. My code is not working too.",date:Date.new(2022,05,30), location:"Le Wagon, Lisboa", user:user1)
 photo12 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654701384/Quilt/memories%20lewagon/jpeg/IMG_6672_pv07ja_dlalre.jpg')
 memory6.photo.attach(io: photo12, filename: 'photo12.jpg', content_type: 'image/jpg')
+memory7 = Memory.create(title:"Waiting for the TA tickets", description:"Blood, sweat and tickets. Hate waitings. My code needs to FLY people!",date:Date.new(2022,06,07), location:"Le Wagon, Lisboa", user:user1)
+photo13 = URI.open('https://res.cloudinary.com/monstergrannies/image/upload/v1654857401/Quilt/fotos/IMG_5497_3_wfou7r_hh8ghx.jpg')
+memory7.photo.attach(io: photo13, filename: 'photo13.jpg', content_type: 'image/jpg')
 
 
 
@@ -160,6 +163,7 @@ Memscrap3 = ScrapbookMemory.create(memory: memory3, scrapbook: scrap1)
 Memscrap4 = ScrapbookMemory.create(memory: memory4, scrapbook: scrap1)
 Memscrap5 = ScrapbookMemory.create(memory: memory5, scrapbook: scrap1)
 Memscrap6 = ScrapbookMemory.create(memory: memory6, scrapbook: scrap1)
+Memscrap7 = ScrapbookMemory.create(memory: memory7, scrapbook: scrap1)
 #Memscrap7 = ScrapbookMemory.create(memory: memory7, scrapbook: scrap1)
 #Memscrap8 = ScrapbookMemory.create(memory: memory8, scrapbook: scrap1)
 #Memscrap9 = ScrapbookMemory.create(memory: memory9, scrapbook: scrap1)
